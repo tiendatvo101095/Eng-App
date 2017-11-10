@@ -9,25 +9,24 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+
 class WelcomeViewController: UIViewController {
 
     @IBOutlet weak var userNameLabel: UILabel!
     
-    
-    @IBAction func LogoutButton(_ sender: Any) {
-        
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
-        }
-    }
+ //   var userPath: UsersModel?
+    let curUser =  Auth.auth().currentUser
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        let curUser =  Auth.auth().currentUser
-        userNameLabel.text = curUser?.email
+      //  userNameLabel.text = "Hi " + (curUser?.email)!
+        if ((curUser) != nil)
+        {
+            userNameLabel.text = "Hi " + (curUser?.email)!
+            
+        }else{
+            performSegue(withIdentifier: "nilUser", sender: nil)
+        }
+        
         
         // Do any additional setup after loading the view.
     }
@@ -37,15 +36,18 @@ class WelcomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //Log out button
+    @IBAction func LogoutButton(_ sender: Any) {
+        
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            print("Log out")
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
     }
-    */
+    //....
+
 
 }

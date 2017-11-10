@@ -12,6 +12,7 @@
         <array key="HelveticaNeue.ttc">
             <string>HelveticaNeue</string>
             <string>HelveticaNeue-Bold</string>
+            <string>HelveticaNeue-Medium</string>
         </array>
         <array key="HelveticaNeueLights.ttc">
             <string>HelveticaNeue-Light</string>
@@ -108,6 +109,7 @@
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xG2-pp-ver">
                                 <rect key="frame" x="16" y="156" width="343" height="251"/>
+                                <color key="backgroundColor" red="0.1529411765" green="0.71764705880000002" blue="0.0078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Wvr-PO-2P8">
                                     <size key="itemSize" width="107" height="110"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -137,7 +139,7 @@
                                         </view>
                                         <connections>
                                             <outlet property="userNameLabel" destination="gQI-0T-acQ" id="fNd-GU-ixH"/>
-                                            <segue destination="6CU-uB-mp7" kind="showDetail" id="KsZ-WG-3HD"/>
+                                            <segue destination="6CU-uB-mp7" kind="show" identifier="toLogin" id="Ep1-xv-yBn"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -200,15 +202,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WELCOME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEC-wB-SVI">
-                                <rect key="frame" x="120" y="219" width="134" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Knc-FP-21y">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.15294117647058825" green="0.71764705882352942" blue="0.0078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi Dat!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEC-wB-SVI">
+                                <rect key="frame" x="0.0" y="44" width="375" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="JCn-4P-6yQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YyY-oi-THa">
-                                <rect key="frame" x="132" y="462" width="111" height="30"/>
+                                <rect key="frame" x="132" y="609" width="111" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Logout"/>
@@ -217,24 +225,50 @@
                                     <segue destination="ftg-FO-zON" kind="show" id="wp2-of-J5U"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="66r-nL-s7r">
+                                <rect key="frame" x="137" y="100" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Eq2-wB-LcA"/>
+                                    <constraint firstAttribute="height" constant="100" id="SA9-Qe-LaV"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Knc-FP-21y" firstAttribute="leading" secondItem="jbb-kY-EmH" secondAttribute="leading" id="2x1-Kh-gda"/>
+                            <constraint firstItem="kEC-wB-SVI" firstAttribute="top" secondItem="jbb-kY-EmH" secondAttribute="top" constant="24" id="3DI-M8-Hrg"/>
+                            <constraint firstItem="kEC-wB-SVI" firstAttribute="leading" secondItem="jbb-kY-EmH" secondAttribute="leading" id="7Tz-wq-kbL"/>
+                            <constraint firstItem="jbb-kY-EmH" firstAttribute="bottom" secondItem="Knc-FP-21y" secondAttribute="bottom" id="Mg1-2m-7jH"/>
+                            <constraint firstItem="66r-nL-s7r" firstAttribute="top" secondItem="kEC-wB-SVI" secondAttribute="bottom" constant="19" id="O6l-Xw-h9t"/>
+                            <constraint firstItem="jbb-kY-EmH" firstAttribute="trailing" secondItem="Knc-FP-21y" secondAttribute="trailing" id="P64-jb-wkB"/>
+                            <constraint firstItem="jbb-kY-EmH" firstAttribute="trailing" secondItem="kEC-wB-SVI" secondAttribute="trailing" id="Xdn-xc-Hdq"/>
+                            <constraint firstItem="66r-nL-s7r" firstAttribute="leading" secondItem="jbb-kY-EmH" secondAttribute="leading" constant="137" id="eMb-qS-waD"/>
+                            <constraint firstItem="jbb-kY-EmH" firstAttribute="trailing" secondItem="66r-nL-s7r" secondAttribute="trailing" constant="138" id="fvX-ep-jhZ"/>
+                            <constraint firstItem="jbb-kY-EmH" firstAttribute="top" secondItem="Knc-FP-21y" secondAttribute="top" constant="20" id="lk0-vJ-AZ0"/>
+                            <constraint firstItem="jbb-kY-EmH" firstAttribute="bottom" secondItem="66r-nL-s7r" secondAttribute="bottom" constant="467" id="pb3-wI-JhG"/>
+                            <constraint firstItem="jbb-kY-EmH" firstAttribute="bottom" secondItem="kEC-wB-SVI" secondAttribute="bottom" constant="586" id="t32-Do-Ap6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="jbb-kY-EmH"/>
                     </view>
                     <connections>
                         <outlet property="userNameLabel" destination="kEC-wB-SVI" id="4pQ-dt-abI"/>
+                        <segue destination="ftg-FO-zON" kind="presentation" identifier="nilUser" id="myO-Zv-mP4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gEt-YK-6fq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1140" y="911.69415292353835"/>
+            <point key="canvasLocation" x="1377" y="907"/>
         </scene>
     </scenes>
     <resources>
         <image name="CREATE-BTN" width="2349" height="396"/>
         <image name="W-Button" width="1800" height="321"/>
         <image name="app-bg" width="750" height="1334"/>
+        <image name="background" width="1242" height="2208"/>
         <image name="game-now-btn" width="598" height="101"/>
         <image name="user" width="296" height="425"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="myO-Zv-mP4"/>
+    </inferredMetricsTieBreakers>
 </document>

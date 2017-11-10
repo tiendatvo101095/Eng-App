@@ -22,6 +22,7 @@ class UsersViewController: UIViewController,UICollectionViewDataSource,UICollect
         
         userRef = Database.database().reference()
         fetchUser()
+        signOut()
          
     }
 
@@ -31,8 +32,17 @@ class UsersViewController: UIViewController,UICollectionViewDataSource,UICollect
         
     }
     
+    func signOut(){
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+    }
+    
+    // Fetch User from Firebase
     func fetchUser() {
-
         userRef.child("users").observe(.childAdded, with: { (snapshot) in
                     
             let value = snapshot.value as? NSDictionary
@@ -55,6 +65,7 @@ class UsersViewController: UIViewController,UICollectionViewDataSource,UICollect
         return usersList.count
         
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! UsersCollectionViewCell
         
@@ -65,18 +76,46 @@ class UsersViewController: UIViewController,UICollectionViewDataSource,UICollect
         return cell
     }
     
-    
+    // Sign up
     @IBAction func signUpButton(_ sender: Any) {
         self.performSegue(withIdentifier: "toSignUp", sender: nil)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+   //..
+    var selectedData: UsersModel?
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedData = usersList[indexPath.row]
+       // var key:String?
+        let username = (selectedData?.name)! + "@gmail.com"
+        let key = selectedData?.name
+        print(username)
+        Auth.auth().signIn(withEmail: username, password: key!, completion: { (user, error) in
+            if (error == nil){
+                print("Success")
+                self.performSegue(withIdentifier: "toLogin", sender: nil)
+            }
+            
+        })
+       
     }
-    */
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//        if (segue.identifier == "toLogin"){
+//            let toWelcomeVC = segue.destination as! WelcomeViewController
+//            toWelcomeVC.userPath = selectedData
+//
+//            Auth.auth().signIn(withEmail: (selectedData?.name)! + "@gmail.com", password: (selectedData?.name)!, completion: { (user, error) in
+//                if error != nil {
+//                    print("Success!!!")
+//                }
+//                else{
+//                    print("Somethings wrong!!!")
+//                }
+//            })
+//           // print(selectedData?.name)
+//
+//        }
+//    }
 
 }
