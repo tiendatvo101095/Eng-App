@@ -36,6 +36,7 @@ class UsersViewController: UIViewController,UICollectionViewDataSource,UICollect
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
+            print("Log out from UsersViewController")
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
@@ -80,42 +81,24 @@ class UsersViewController: UIViewController,UICollectionViewDataSource,UICollect
     @IBAction func signUpButton(_ sender: Any) {
         self.performSegue(withIdentifier: "toSignUp", sender: nil)
     }
-   //..
-    var selectedData: UsersModel?
-    
+    var usersPathData: UsersModel?
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedData = usersList[indexPath.row]
-       // var key:String?
-        let username = (selectedData?.name)! + "@gmail.com"
-        let key = selectedData?.name
-        print(username)
-        Auth.auth().signIn(withEmail: username, password: key!, completion: { (user, error) in
-            if (error == nil){
-                print("Success")
-                self.performSegue(withIdentifier: "toLogin", sender: nil)
-            }
-            
-        })
-       
+        self.performSegue(withIdentifier: "toLogin", sender: indexPath)
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//        if (segue.identifier == "toLogin"){
-//            let toWelcomeVC = segue.destination as! WelcomeViewController
-//            toWelcomeVC.userPath = selectedData
-//
-//            Auth.auth().signIn(withEmail: (selectedData?.name)! + "@gmail.com", password: (selectedData?.name)!, completion: { (user, error) in
-//                if error != nil {
-//                    print("Success!!!")
-//                }
-//                else{
-//                    print("Somethings wrong!!!")
-//                }
-//            })
-//           // print(selectedData?.name)
-//
-//        }
-//    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (segue.identifier == "toLogin"){
+            guard let selectedIndexPath = sender as? NSIndexPath,
+                let detailsVC = segue.destination as? WelcomeViewController else { return }
+            print("*************************************")
 
+            usersPathData = usersList[selectedIndexPath.row]
+            detailsVC.userPath = usersPathData
+            detailsVC.email = usersPathData?.name
+
+        }
+    }
 }

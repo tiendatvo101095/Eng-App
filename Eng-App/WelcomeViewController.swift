@@ -14,21 +14,27 @@ class WelcomeViewController: UIViewController {
 
     @IBOutlet weak var userNameLabel: UILabel!
     
- //   var userPath: UsersModel?
-    let curUser =  Auth.auth().currentUser
+    var userPath: UsersModel?
+    var email:String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-      //  userNameLabel.text = "Hi " + (curUser?.email)!
-        if ((curUser) != nil)
-        {
-            userNameLabel.text = "Hi " + (curUser?.email)!
-            
-        }else{
-            performSegue(withIdentifier: "nilUser", sender: nil)
-        }
-        
-        
+        //    userNameLabel.text = userPath?.name
+        userNameLabel.text = email?.description
         // Do any additional setup after loading the view.
+    }
+    
+    
+    func login(){
+        
+        let email = (userPath?.name)! + "@gmail.com"
+        let key = userPath?.name
+        
+        Auth.auth().signIn(withEmail: email, password: key!) { (user, error) in
+            if (error != nil){
+                print("SUCCESS!!!")
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {

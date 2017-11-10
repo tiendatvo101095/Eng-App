@@ -139,7 +139,7 @@
                                         </view>
                                         <connections>
                                             <outlet property="userNameLabel" destination="gQI-0T-acQ" id="fNd-GU-ixH"/>
-                                            <segue destination="6CU-uB-mp7" kind="show" identifier="toLogin" id="Ep1-xv-yBn"/>
+                                            <segue destination="6CU-uB-mp7" kind="showDetail" identifier="toLogin" id="YAH-ZE-RW7"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -192,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZu-RI-5XQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="114.40000000000001" y="885.60719640179911"/>
+            <point key="canvasLocation" x="-626" y="1163"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="513-DW-Lro">
@@ -250,6 +250,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jbb-kY-EmH"/>
                     </view>
+                    <navigationItem key="navigationItem" id="6mF-01-ZgO"/>
                     <connections>
                         <outlet property="userNameLabel" destination="kEC-wB-SVI" id="4pQ-dt-abI"/>
                         <segue destination="ftg-FO-zON" kind="presentation" identifier="nilUser" id="myO-Zv-mP4"/>
