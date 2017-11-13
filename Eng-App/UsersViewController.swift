@@ -77,28 +77,49 @@ class UsersViewController: UIViewController,UICollectionViewDataSource,UICollect
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
     // Sign up
     @IBAction func signUpButton(_ sender: Any) {
         self.performSegue(withIdentifier: "toSignUp", sender: nil)
     }
+    //....
+    
     var usersPathData: UsersModel?
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "toLogin", sender: indexPath)
+        
+        usersPathData = usersList[indexPath.row]
+            let email = (usersPathData?.name)! + "@gmail.com"
+            let key = usersPathData?.name
+            print(key?.description as Any)
+            Auth.auth().signIn(withEmail: email, password: key!) { (user, error) in
+                if (error == nil){
+                    print("SUCCESS!!!")
+                    
+                     self.performSegue(withIdentifier: "toLogin", sender: indexPath)
+                }else{
+                    print("LOGIN FAILS")
+                  
+                }
+            }
+        
     }
     
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+
         if (segue.identifier == "toLogin"){
             guard let selectedIndexPath = sender as? NSIndexPath,
                 let detailsVC = segue.destination as? WelcomeViewController else { return }
             print("*************************************")
-
             usersPathData = usersList[selectedIndexPath.row]
             detailsVC.userPath = usersPathData
-            detailsVC.email = usersPathData?.name
-
         }
+        
     }
+    
+    
 }

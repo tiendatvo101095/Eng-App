@@ -15,27 +15,17 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var userNameLabel: UILabel!
     
     var userPath: UsersModel?
-    var email:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //    userNameLabel.text = userPath?.name
-        userNameLabel.text = email?.description
-        // Do any additional setup after loading the view.
+        
+        let cur = Auth.auth().currentUser
+        let name = cur?.email
+        let endIndex = name?.index((name?.endIndex)!, offsetBy: -10)
+        let truncated = name?.substring(to: endIndex!)
+        userNameLabel.text = truncated?.description
     }
     
-    
-    func login(){
-        
-        let email = (userPath?.name)! + "@gmail.com"
-        let key = userPath?.name
-        
-        Auth.auth().signIn(withEmail: email, password: key!) { (user, error) in
-            if (error != nil){
-                print("SUCCESS!!!")
-            }
-        }
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
