@@ -12,10 +12,23 @@ import FirebaseAuth
 
 class ViewController: UIViewController {
     @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var viewBg: UIView!
+    @IBOutlet weak var gameNowBg: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        UIGraphicsBeginImageContext(viewBg.frame.size)
+        UIImage(named: "app-bg.jpg")?.draw(in: viewBg.bounds)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        viewBg.backgroundColor = UIColor(patternImage: image)
+        
+        gameNowBg.backgroundColor = UIColor(red:0.12, green:0.60, blue:1.00, alpha:1.0)
+        gameNowBg.layer.cornerRadius = 30
+        
+        userNameTextField.backgroundColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.0)
+        userNameTextField.layer.cornerRadius = 30
     }
 
     override func didReceiveMemoryWarning() {

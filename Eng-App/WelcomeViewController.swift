@@ -32,7 +32,7 @@ class WelcomeViewController: UIViewController {
         topBg.backgroundColor = UIColor(red:0.15, green:0.72, blue:0.00, alpha:1.0)
         bottomBg.backgroundColor = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0)
         
-        archievementBtn.layer.cornerRadius = 10
+        archievementBtn.layer.cornerRadius = 20
         archievementBtn.layer.borderWidth = 1
         archievementBtn.layer.borderColor = UIColor.white.cgColor
     }

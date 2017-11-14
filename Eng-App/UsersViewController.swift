@@ -16,9 +16,38 @@ class UsersViewController: UIViewController,UICollectionViewDataSource,UICollect
     
     var usersList = [UsersModel]()
     var userRef:DatabaseReference!
+    
     @IBOutlet weak var collectionViewUser: UICollectionView!
+    @IBOutlet weak var viewBg: UIView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var createNewGameBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UIGraphicsBeginImageContext(viewBg.frame.size)
+        UIImage(named: "app-bg.jpg")?.draw(in: viewBg.bounds)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        viewBg.backgroundColor = UIColor(patternImage: image)
+        
+        collectionView.backgroundColor = UIColor.clear.withAlphaComponent(0)
+        
+        let cellSize = CGSize(width:150 , height:150)
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical //.horizontal
+        layout.itemSize = cellSize
+        layout.sectionInset = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
+        layout.minimumLineSpacing = 1.0
+        layout.minimumInteritemSpacing = 1.0
+        collectionView.setCollectionViewLayout(layout, animated: true)
+        collectionView.reloadData()
+        
+        createNewGameBtn.backgroundColor = .clear
+        createNewGameBtn.layer.cornerRadius = 20
+        createNewGameBtn.layer.borderWidth = 1
+        createNewGameBtn.layer.borderColor = UIColor.white.cgColor
         
         userRef = Database.database().reference()
         fetchUser()
