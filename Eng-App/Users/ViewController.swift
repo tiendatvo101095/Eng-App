@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         viewBg.backgroundColor = UIColor(patternImage: image)
-        
+        userNameTextField.contentVerticalAlignment = UIControlContentVerticalAlignment.center
         gameNowBg.backgroundColor = UIColor(red:0.12, green:0.60, blue:1.00, alpha:1.0)
         gameNowBg.layer.cornerRadius = 30
         
@@ -63,9 +63,7 @@ class ViewController: UIViewController {
                 })
         })
         
- 
     }
-    
     
 }
 

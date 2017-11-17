@@ -17,6 +17,7 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var bottomBg: UIView!
     @IBOutlet weak var archievementBtn: UIButton!
     
+    @IBOutlet weak var Vocabulary: UIButton!
     
     var userPath: UsersModel?
     
