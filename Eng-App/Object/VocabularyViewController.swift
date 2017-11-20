@@ -90,8 +90,8 @@ class VocabularyViewController: UIViewController,UICollectionViewDelegate,UIColl
             }
             
             do {
-               try let jsonData = try Data(contentsOf: jsonURL)
-                return try JSONDecoder().decode([Animals].self, from: jsonData)
+              // try let jsonData = try Data(contentsOf: jsonURL)
+//                return try JSONDecoder().decode([Animals].self, from: jsonData)
             } catch {
                 fatalError("Unable to decode VirtualObjects JSON: \(error)")
             }
