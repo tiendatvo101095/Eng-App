@@ -18,13 +18,7 @@
 		637574F21FB307460095C8F9 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637574F11FB307460095C8F9 /* UsersViewController.swift */; };
 		637574F41FB3080A0095C8F9 /* UsersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637574F31FB3080A0095C8F9 /* UsersCollectionViewCell.swift */; };
 		638DAC9D1FC28AF200B194DF /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638DAC9C1FC28AF200B194DF /* LessonViewController.swift */; };
-		638F2F1B1FBE9F3F004E343F /* FocusSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F2F1A1FBE9F3F004E343F /* FocusSquare.swift */; };
-		638F2F1D1FBEA04C004E343F /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F2F1C1FBEA04C004E343F /* Utilities.swift */; };
-		638F2F1F1FBEA096004E343F /* FocusSquareSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F2F1E1FBEA096004E343F /* FocusSquareSegment.swift */; };
-		63913CD81FBD8900003BD225 /* VRObjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63913CD71FBD8900003BD225 /* VRObjectCollectionViewCell.swift */; };
 		63913CDA1FBD89C4003BD225 /* VirtualObjects.json in Resources */ = {isa = PBXBuildFile; fileRef = 63913CD91FBD89C4003BD225 /* VirtualObjects.json */; };
-		63913CE31FBE8FBD003BD225 /* DetectPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63913CE21FBE8FBD003BD225 /* DetectPlane.swift */; };
-		63B44E841FBBF87C00D282C7 /* VocabularyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B44E831FBBF87C00D282C7 /* VocabularyViewController.swift */; };
 		63B44E861FBD345200D282C7 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B44E851FBD345100D282C7 /* Models.scnassets */; };
 		63CC72221FC2D1CE00BE53F0 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CC72211FC2D1CE00BE53F0 /* ResultViewController.swift */; };
 		CCE7AD403B91B4BA801C8E6A /* Pods_Eng_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FCF39037930679EB6C56F7 /* Pods_Eng_App.framework */; };
@@ -44,13 +38,7 @@
 		637574F11FB307460095C8F9 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		637574F31FB3080A0095C8F9 /* UsersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCollectionViewCell.swift; sourceTree = "<group>"; };
 		638DAC9C1FC28AF200B194DF /* LessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewController.swift; sourceTree = "<group>"; };
-		638F2F1A1FBE9F3F004E343F /* FocusSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusSquare.swift; sourceTree = "<group>"; };
-		638F2F1C1FBEA04C004E343F /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		638F2F1E1FBEA096004E343F /* FocusSquareSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusSquareSegment.swift; sourceTree = "<group>"; };
-		63913CD71FBD8900003BD225 /* VRObjectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRObjectCollectionViewCell.swift; sourceTree = "<group>"; };
 		63913CD91FBD89C4003BD225 /* VirtualObjects.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = VirtualObjects.json; sourceTree = "<group>"; };
-		63913CE21FBE8FBD003BD225 /* DetectPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectPlane.swift; sourceTree = "<group>"; };
-		63B44E831FBBF87C00D282C7 /* VocabularyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyViewController.swift; sourceTree = "<group>"; };
 		63B44E851FBD345100D282C7 /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
 		63CC72211FC2D1CE00BE53F0 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		AB9E70A6C0A6F62A2500D247 /* Pods-Eng-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eng-App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eng-App/Pods-Eng-App.release.xcconfig"; sourceTree = "<group>"; };
@@ -93,8 +81,6 @@
 			children = (
 				631214B91FB2EFC200EE9BF1 /* AppDelegate.swift */,
 				63913CE11FBD9B69003BD225 /* Users */,
-				63B44E831FBBF87C00D282C7 /* VocabularyViewController.swift */,
-				63913CD71FBD8900003BD225 /* VRObjectCollectionViewCell.swift */,
 				631214BD1FB2EFC300EE9BF1 /* Main.storyboard */,
 				63913CD91FBD89C4003BD225 /* VirtualObjects.json */,
 				631214C01FB2EFC400EE9BF1 /* Assets.xcassets */,
@@ -102,10 +88,6 @@
 				631214C21FB2EFC400EE9BF1 /* LaunchScreen.storyboard */,
 				637574ED1FB2F3850095C8F9 /* GoogleService-Info.plist */,
 				631214C51FB2EFC500EE9BF1 /* Info.plist */,
-				63913CE21FBE8FBD003BD225 /* DetectPlane.swift */,
-				638F2F1A1FBE9F3F004E343F /* FocusSquare.swift */,
-				638F2F1E1FBEA096004E343F /* FocusSquareSegment.swift */,
-				638F2F1C1FBEA04C004E343F /* Utilities.swift */,
 				638DAC9C1FC28AF200B194DF /* LessonViewController.swift */,
 				63CC72211FC2D1CE00BE53F0 /* ResultViewController.swift */,
 			);
@@ -282,17 +264,11 @@
 				638DAC9D1FC28AF200B194DF /* LessonViewController.swift in Sources */,
 				637574F01FB2F75B0095C8F9 /* WelcomeViewController.swift in Sources */,
 				637574F21FB307460095C8F9 /* UsersViewController.swift in Sources */,
-				638F2F1D1FBEA04C004E343F /* Utilities.swift in Sources */,
-				63913CD81FBD8900003BD225 /* VRObjectCollectionViewCell.swift in Sources */,
-				63913CE31FBE8FBD003BD225 /* DetectPlane.swift in Sources */,
 				631214BC1FB2EFC300EE9BF1 /* ViewController.swift in Sources */,
-				63B44E841FBBF87C00D282C7 /* VocabularyViewController.swift in Sources */,
-				638F2F1F1FBEA096004E343F /* FocusSquareSegment.swift in Sources */,
 				63CC72221FC2D1CE00BE53F0 /* ResultViewController.swift in Sources */,
 				637574F41FB3080A0095C8F9 /* UsersCollectionViewCell.swift in Sources */,
 				631214BA1FB2EFC200EE9BF1 /* AppDelegate.swift in Sources */,
 				6302ECB91FB4376700A271FD /* UsersModel.swift in Sources */,
-				638F2F1B1FBE9F3F004E343F /* FocusSquare.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,7 +410,7 @@
 				DEVELOPMENT_TEAM = 3B3ENMYZR4;
 				INFOPLIST_FILE = "Eng-App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.datvo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lukasnguyen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -450,7 +426,7 @@
 				DEVELOPMENT_TEAM = 3B3ENMYZR4;
 				INFOPLIST_FILE = "Eng-App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.datvo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lukasnguyen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
