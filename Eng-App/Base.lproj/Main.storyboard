@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ftg-FO-zON">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ftg-FO-zON">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -38,6 +38,18 @@
                                             <constraint firstAttribute="width" constant="100" id="xXq-Qc-0CG"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KIDDY TALK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfd-He-LoA">
+                                        <rect key="frame" x="119" y="190" width="177" height="30.666666666666657"/>
+                                        <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="26"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's speak like a parrot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AU-yd-PQp">
+                                        <rect key="frame" x="127" y="240" width="158.66666666666669" height="19"/>
+                                        <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" placeholder="ENTER YOUR NAME" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1kI-t6-0gk">
                                         <rect key="frame" x="82.666666666666686" y="309.66666666666669" width="250" height="60"/>
                                         <constraints>
@@ -62,24 +74,38 @@
                                             <action selector="StartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G2u-3t-pul"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KIDDY TALK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfd-He-LoA">
-                                        <rect key="frame" x="119" y="190" width="177" height="30.666666666666657"/>
-                                        <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="26"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's speak like a parrot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AU-yd-PQp">
-                                        <rect key="frame" x="126.99999999999999" y="240.66666666666669" width="158.66666666666663" height="19"/>
-                                        <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uos-9l-ZxV">
+                                        <rect key="frame" x="82" y="489.66666666666663" width="250" height="59.999999999999886"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="EPU-2b-4EX"/>
+                                            <constraint firstAttribute="width" constant="250" id="UXs-W3-2pD"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Already have an account?">
+                                                    <attributes>
+                                                        <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <font key="NSFont" size="18" name=".AppleSystemUIFont"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        <integer key="NSUnderline" value="1"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="StartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wsO-Sa-Z38"/>
+                                            <segue destination="ftg-FO-zON" kind="show" id="WM5-fZ-thE"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="8AU-yd-PQp" firstAttribute="top" secondItem="qfd-He-LoA" secondAttribute="bottom" constant="20" id="8aW-Dy-oKg"/>
                                     <constraint firstItem="0h8-RJ-LLx" firstAttribute="centerX" secondItem="6Lu-4Y-vqD" secondAttribute="centerX" id="A2t-uv-WMh"/>
                                     <constraint firstItem="qfd-He-LoA" firstAttribute="top" secondItem="0h8-RJ-LLx" secondAttribute="bottom" constant="30" id="FSE-AF-4Op"/>
+                                    <constraint firstItem="uos-9l-ZxV" firstAttribute="centerX" secondItem="6Lu-4Y-vqD" secondAttribute="centerX" id="Ge5-LQ-BY8"/>
+                                    <constraint firstItem="uos-9l-ZxV" firstAttribute="top" secondItem="37M-K2-6rp" secondAttribute="bottom" constant="30" id="MES-Yp-hCd"/>
                                     <constraint firstItem="37M-K2-6rp" firstAttribute="top" secondItem="1kI-t6-0gk" secondAttribute="bottom" constant="30" id="Osk-py-ejK"/>
                                     <constraint firstItem="8AU-yd-PQp" firstAttribute="centerX" secondItem="6Lu-4Y-vqD" secondAttribute="centerX" id="QRf-7B-iyw"/>
                                     <constraint firstItem="qfd-He-LoA" firstAttribute="centerX" secondItem="6Lu-4Y-vqD" secondAttribute="centerX" id="gDD-us-ivx"/>
@@ -189,7 +215,7 @@
                                         </connections>
                                     </collectionView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- OR -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIo-wj-Kda">
-                                        <rect key="frame" x="183.66666666666666" y="451" width="47.333333333333343" height="20"/>
+                                        <rect key="frame" x="183.66666666666663" y="451" width="47.333333333333343" height="20"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -291,7 +317,7 @@
                                         </state>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level: 5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4w-sM-SDJ">
-                                        <rect key="frame" x="162.33333333333334" y="209" width="90.333333333333343" height="30.333333333333343"/>
+                                        <rect key="frame" x="162.33333333333334" y="209" width="90.333333333333314" height="30.333333333333314"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -314,9 +340,96 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HGf-A2-4CH" userLabel="bottomBg">
                                 <rect key="frame" x="0.0" y="378" width="414" height="358"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YyY-oi-THa">
-                                        <rect key="frame" x="151" y="164" width="111" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You want to learn?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48c-mc-9et" userLabel="youWantToLearn">
+                                        <rect key="frame" x="0.0" y="15" width="414" height="17.666666666666686"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbv-4Q-plN" userLabel="buttonFrame">
+                                        <rect key="frame" x="32" y="47.666666666666686" width="350" height="189.99999999999994"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vocabulary-icon" translatesAutoresizingMaskIntoConstraints="NO" id="7Yh-Wn-49H">
+                                                <rect key="frame" x="10" y="10" width="70" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="3QB-TO-Awc"/>
+                                                    <constraint firstAttribute="width" constant="70" id="OhS-tX-Rp9"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0w-UA-vCf">
+                                                <rect key="frame" x="90" y="10" width="250" height="33"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                                <state key="normal" title="Vocabulary">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="RI0-ih-dy5" kind="show" id="x6U-lm-k5o"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You will learn by using picture cards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNQ-m0-Arl">
+                                                <rect key="frame" x="90" y="53" width="250" height="14"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gray-line" translatesAutoresizingMaskIntoConstraints="NO" id="jCZ-Yd-gEH">
+                                                <rect key="frame" x="25" y="96.999999999999943" width="300" height="1"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="Wrx-qM-xni"/>
+                                                    <constraint firstAttribute="width" constant="300" id="u3v-Zc-Y1y"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lession-icon" translatesAutoresizingMaskIntoConstraints="NO" id="nOJ-p1-gGP">
+                                                <rect key="frame" x="10" y="107.99999999999994" width="70" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="QZp-Tb-Hn3"/>
+                                                    <constraint firstAttribute="height" constant="70" id="eia-51-8UV"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUb-gu-kLi">
+                                                <rect key="frame" x="90" y="107.99999999999994" width="250" height="33"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                                <state key="normal" title="Lesson">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You will learn by using the topic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHX-Q4-PVt">
+                                                <rect key="frame" x="90" y="150.99999999999994" width="250" height="14"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="190" id="0eZ-G1-Iu7"/>
+                                            <constraint firstItem="UNQ-m0-Arl" firstAttribute="top" secondItem="v0w-UA-vCf" secondAttribute="bottom" constant="10" id="716-xa-Hwr"/>
+                                            <constraint firstAttribute="width" constant="350" id="7Do-e8-1fP"/>
+                                            <constraint firstItem="SHX-Q4-PVt" firstAttribute="leading" secondItem="nOJ-p1-gGP" secondAttribute="trailing" constant="10" id="HJh-fx-GST"/>
+                                            <constraint firstItem="7Yh-Wn-49H" firstAttribute="leading" secondItem="dbv-4Q-plN" secondAttribute="leading" constant="10" id="HQz-wE-VkD"/>
+                                            <constraint firstItem="SHX-Q4-PVt" firstAttribute="top" secondItem="aUb-gu-kLi" secondAttribute="bottom" constant="10" id="MMg-9X-enH"/>
+                                            <constraint firstItem="UNQ-m0-Arl" firstAttribute="leading" secondItem="7Yh-Wn-49H" secondAttribute="trailing" constant="10" id="WpA-DC-5dT"/>
+                                            <constraint firstItem="aUb-gu-kLi" firstAttribute="top" secondItem="jCZ-Yd-gEH" secondAttribute="bottom" constant="10" id="Wvl-Hu-ICO"/>
+                                            <constraint firstItem="jCZ-Yd-gEH" firstAttribute="centerX" secondItem="dbv-4Q-plN" secondAttribute="centerX" id="YX6-d2-1EU"/>
+                                            <constraint firstItem="aUb-gu-kLi" firstAttribute="leading" secondItem="nOJ-p1-gGP" secondAttribute="trailing" constant="10" id="fgI-1U-2kc"/>
+                                            <constraint firstItem="7Yh-Wn-49H" firstAttribute="top" secondItem="dbv-4Q-plN" secondAttribute="top" constant="10" id="gZh-6H-3tu"/>
+                                            <constraint firstAttribute="trailing" secondItem="UNQ-m0-Arl" secondAttribute="trailing" constant="10" id="jpz-T8-cFt"/>
+                                            <constraint firstItem="v0w-UA-vCf" firstAttribute="top" secondItem="dbv-4Q-plN" secondAttribute="top" constant="10" id="lja-c1-yIB"/>
+                                            <constraint firstItem="nOJ-p1-gGP" firstAttribute="leading" secondItem="dbv-4Q-plN" secondAttribute="leading" constant="10" id="pNg-gm-AgE"/>
+                                            <constraint firstAttribute="trailing" secondItem="v0w-UA-vCf" secondAttribute="trailing" constant="10" id="tXe-a8-XhU"/>
+                                            <constraint firstItem="jCZ-Yd-gEH" firstAttribute="top" secondItem="UNQ-m0-Arl" secondAttribute="bottom" constant="30" id="tnZ-Ff-BQ7"/>
+                                            <constraint firstAttribute="trailing" secondItem="SHX-Q4-PVt" secondAttribute="trailing" constant="10" id="wkh-l5-x3Q"/>
+                                            <constraint firstItem="v0w-UA-vCf" firstAttribute="leading" secondItem="7Yh-Wn-49H" secondAttribute="trailing" constant="10" id="xVM-qL-UeU"/>
+                                            <constraint firstItem="nOJ-p1-gGP" firstAttribute="top" secondItem="jCZ-Yd-gEH" secondAttribute="bottom" constant="10" id="yb5-yl-DLF"/>
+                                            <constraint firstAttribute="trailing" secondItem="aUb-gu-kLi" secondAttribute="trailing" constant="10" id="zUG-Yr-NC7"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YyY-oi-THa">
+                                        <rect key="frame" x="157.66666666666669" y="247.66666666666663" width="100.00000000000006" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="F7J-e8-kbZ"/>
+                                            <constraint firstAttribute="height" constant="40" id="zLw-B9-Xlt"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="Logout"/>
                                         <connections>
@@ -324,16 +437,18 @@
                                             <segue destination="ftg-FO-zON" kind="show" id="wp2-of-J5U"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0w-UA-vCf">
-                                        <rect key="frame" x="149" y="88" width="115" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Test AR"/>
-                                        <connections>
-                                            <segue destination="RI0-ih-dy5" kind="show" id="x6U-lm-k5o"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.62206525259067358" green="0.62206525259067358" blue="0.62206525259067358" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="48c-mc-9et" firstAttribute="centerX" secondItem="HGf-A2-4CH" secondAttribute="centerX" id="3ww-a3-yaE"/>
+                                    <constraint firstItem="48c-mc-9et" firstAttribute="top" secondItem="HGf-A2-4CH" secondAttribute="top" constant="15" id="4k8-1Y-gOY"/>
+                                    <constraint firstItem="dbv-4Q-plN" firstAttribute="top" secondItem="48c-mc-9et" secondAttribute="bottom" constant="15" id="8et-g8-ege"/>
+                                    <constraint firstItem="dbv-4Q-plN" firstAttribute="centerX" secondItem="HGf-A2-4CH" secondAttribute="centerX" id="P29-2I-klO"/>
+                                    <constraint firstItem="48c-mc-9et" firstAttribute="leading" secondItem="HGf-A2-4CH" secondAttribute="leading" id="P94-B1-ppW"/>
+                                    <constraint firstItem="YyY-oi-THa" firstAttribute="centerX" secondItem="HGf-A2-4CH" secondAttribute="centerX" id="U4G-PG-uRC"/>
+                                    <constraint firstItem="YyY-oi-THa" firstAttribute="top" secondItem="dbv-4Q-plN" secondAttribute="bottom" constant="10" id="b1H-Yx-9z2"/>
+                                    <constraint firstAttribute="trailing" secondItem="48c-mc-9et" secondAttribute="trailing" id="coN-bc-hNH"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -354,8 +469,10 @@
                         <outlet property="Vocabulary" destination="v0w-UA-vCf" id="vce-KX-tL2"/>
                         <outlet property="archievementBtn" destination="J40-LC-Jnl" id="FzN-60-zAQ"/>
                         <outlet property="bottomBg" destination="HGf-A2-4CH" id="U4q-Kn-XtP"/>
+                        <outlet property="logOutBtn" destination="YyY-oi-THa" id="0xt-dz-yQW"/>
                         <outlet property="topBg" destination="gVP-KZ-nLl" id="fer-ox-c83"/>
                         <outlet property="userNameLabel" destination="kEC-wB-SVI" id="4pQ-dt-abI"/>
+                        <outlet property="youWantToLearTitle" destination="48c-mc-9et" id="22s-th-dWJ"/>
                         <segue destination="ftg-FO-zON" kind="presentation" identifier="nilUser" id="myO-Zv-mP4"/>
                     </connections>
                 </viewController>
@@ -427,6 +544,14 @@
                                     <action selector="itemARButton:" destination="RI0-ih-dy5" eventType="touchUpInside" id="ZmT-fm-Ikv"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7J6-E3-qJ8">
+                                <rect key="frame" x="20" y="20" width="94" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back to home"/>
+                                <connections>
+                                    <segue destination="6CU-uB-mp7" kind="show" id="FKy-eF-gUZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -445,12 +570,17 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gray-line" width="559" height="1"/>
         <image name="if_check-circle-outline-blank_326565" width="128" height="128"/>
         <image name="imgpsh_fullsize" width="183" height="181"/>
+        <image name="lession-icon" width="140" height="140"/>
         <image name="stars" width="309" height="36"/>
         <image name="user-avatar" width="150" height="150"/>
+        <image name="vocabulary-icon" width="140" height="140"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="x6U-lm-k5o"/>
+        <segue reference="FKy-eF-gUZ"/>
         <segue reference="myO-Zv-mP4"/>
     </inferredMetricsTieBreakers>
 </document>

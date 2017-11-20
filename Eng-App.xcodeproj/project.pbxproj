@@ -22,7 +22,6 @@
 		638F2F1F1FBEA096004E343F /* FocusSquareSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F2F1E1FBEA096004E343F /* FocusSquareSegment.swift */; };
 		63913CD81FBD8900003BD225 /* VRObjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63913CD71FBD8900003BD225 /* VRObjectCollectionViewCell.swift */; };
 		63913CDA1FBD89C4003BD225 /* VirtualObjects.json in Resources */ = {isa = PBXBuildFile; fileRef = 63913CD91FBD89C4003BD225 /* VirtualObjects.json */; };
-		63913CE01FBD8AB6003BD225 /* Virtual Objects in Resources */ = {isa = PBXBuildFile; fileRef = 63913CDF1FBD8AB6003BD225 /* Virtual Objects */; };
 		63913CE31FBE8FBD003BD225 /* DetectPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63913CE21FBE8FBD003BD225 /* DetectPlane.swift */; };
 		63B44E841FBBF87C00D282C7 /* VocabularyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B44E831FBBF87C00D282C7 /* VocabularyViewController.swift */; };
 		63B44E861FBD345200D282C7 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B44E851FBD345100D282C7 /* Models.scnassets */; };
@@ -47,7 +46,6 @@
 		638F2F1E1FBEA096004E343F /* FocusSquareSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusSquareSegment.swift; sourceTree = "<group>"; };
 		63913CD71FBD8900003BD225 /* VRObjectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRObjectCollectionViewCell.swift; sourceTree = "<group>"; };
 		63913CD91FBD89C4003BD225 /* VirtualObjects.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = VirtualObjects.json; sourceTree = "<group>"; };
-		63913CDF1FBD8AB6003BD225 /* Virtual Objects */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Virtual Objects"; sourceTree = "<group>"; };
 		63913CE21FBE8FBD003BD225 /* DetectPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectPlane.swift; sourceTree = "<group>"; };
 		63B44E831FBBF87C00D282C7 /* VocabularyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyViewController.swift; sourceTree = "<group>"; };
 		63B44E851FBD345100D282C7 /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
@@ -91,7 +89,6 @@
 			children = (
 				631214B91FB2EFC200EE9BF1 /* AppDelegate.swift */,
 				63913CE11FBD9B69003BD225 /* Users */,
-				63913CDF1FBD8AB6003BD225 /* Virtual Objects */,
 				63B44E831FBBF87C00D282C7 /* VocabularyViewController.swift */,
 				63913CD71FBD8900003BD225 /* VRObjectCollectionViewCell.swift */,
 				631214BD1FB2EFC300EE9BF1 /* Main.storyboard */,
@@ -205,7 +202,6 @@
 				637574EE1FB2F3850095C8F9 /* GoogleService-Info.plist in Resources */,
 				631214C11FB2EFC400EE9BF1 /* Assets.xcassets in Resources */,
 				63B44E861FBD345200D282C7 /* Models.scnassets in Resources */,
-				63913CE01FBD8AB6003BD225 /* Virtual Objects in Resources */,
 				631214BF1FB2EFC300EE9BF1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,7 +423,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J2RHQ4D42F;
+				DEVELOPMENT_TEAM = 3B3ENMYZR4;
 				INFOPLIST_FILE = "Eng-App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.datvo;
@@ -443,7 +439,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J2RHQ4D42F;
+				DEVELOPMENT_TEAM = 3B3ENMYZR4;
 				INFOPLIST_FILE = "Eng-App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.datvo;

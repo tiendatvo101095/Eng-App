@@ -18,6 +18,8 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var archievementBtn: UIButton!
     
     @IBOutlet weak var Vocabulary: UIButton!
+    @IBOutlet weak var youWantToLearTitle: UILabel!
+    @IBOutlet weak var logOutBtn: UIButton!
     
     var userPath: UsersModel?
     
@@ -36,6 +38,12 @@ class WelcomeViewController: UIViewController {
         archievementBtn.layer.cornerRadius = 20
         archievementBtn.layer.borderWidth = 1
         archievementBtn.layer.borderColor = UIColor.white.cgColor
+        
+        youWantToLearTitle.textColor = UIColor(red:0.20, green:0.20, blue:0.20, alpha:1.0)
+        
+        logOutBtn.backgroundColor = UIColor(red:0.95, green:0.30, blue:0.30, alpha:1.0)
+        logOutBtn.setTitleColor(UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.0), for: .normal)
+        logOutBtn.layer.cornerRadius = 5
     }
     
 
