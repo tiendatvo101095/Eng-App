@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ftg-FO-zON">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RI0-ih-dy5">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -45,7 +45,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's speak like a parrot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AU-yd-PQp">
-                                        <rect key="frame" x="127" y="240" width="158.66666666666669" height="19"/>
+                                        <rect key="frame" x="126.99999999999999" y="240" width="158.66666666666663" height="19"/>
                                         <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -75,7 +75,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uos-9l-ZxV">
-                                        <rect key="frame" x="82" y="489.66666666666663" width="250" height="59.999999999999886"/>
+                                        <rect key="frame" x="82" y="489.66666666666674" width="250" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="EPU-2b-4EX"/>
                                             <constraint firstAttribute="width" constant="250" id="UXs-W3-2pD"/>
@@ -215,7 +215,7 @@
                                         </connections>
                                     </collectionView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- OR -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIo-wj-Kda">
-                                        <rect key="frame" x="183.66666666666663" y="451" width="47.333333333333343" height="20"/>
+                                        <rect key="frame" x="183.66666666666666" y="451" width="47.333333333333343" height="20"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -317,7 +317,7 @@
                                         </state>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level: 5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4w-sM-SDJ">
-                                        <rect key="frame" x="162.33333333333334" y="209" width="90.333333333333314" height="30.333333333333314"/>
+                                        <rect key="frame" x="162.33333333333334" y="209" width="90.333333333333343" height="30.333333333333343"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -341,13 +341,13 @@
                                 <rect key="frame" x="0.0" y="378" width="414" height="358"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You want to learn?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48c-mc-9et" userLabel="youWantToLearn">
-                                        <rect key="frame" x="0.0" y="15" width="414" height="17.666666666666686"/>
+                                        <rect key="frame" x="0.0" y="15.000000000000002" width="414" height="17.666666666666671"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbv-4Q-plN" userLabel="buttonFrame">
-                                        <rect key="frame" x="32" y="47.666666666666686" width="350" height="189.99999999999994"/>
+                                        <rect key="frame" x="32" y="47.666666666666686" width="350" height="190"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vocabulary-icon" translatesAutoresizingMaskIntoConstraints="NO" id="7Yh-Wn-49H">
                                                 <rect key="frame" x="10" y="10" width="70" height="70"/>
@@ -425,7 +425,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YyY-oi-THa">
-                                        <rect key="frame" x="157.66666666666669" y="247.66666666666663" width="100.00000000000006" height="40"/>
+                                        <rect key="frame" x="157.66666666666666" y="247.66666666666663" width="99.999999999999972" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="F7J-e8-kbZ"/>
                                             <constraint firstAttribute="height" constant="40" id="zLw-B9-Xlt"/>
@@ -579,7 +579,6 @@
         <image name="vocabulary-icon" width="140" height="140"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="x6U-lm-k5o"/>
         <segue reference="FKy-eF-gUZ"/>
         <segue reference="myO-Zv-mP4"/>
     </inferredMetricsTieBreakers>

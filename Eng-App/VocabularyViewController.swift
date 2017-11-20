@@ -24,11 +24,6 @@ class VocabularyViewController: UIViewController,UICollectionViewDelegate,UIColl
     }
     
     @IBOutlet var sceneView: ARSCNView!
-    var screenCenter: CGPoint?
-    let session = ARSession()
-    
-    let virtualObjectScene = SCNScene(named: "RockPigeon.scn", inDirectory: "Models.scnassets/RockPigeon")
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,7 +32,12 @@ class VocabularyViewController: UIViewController,UICollectionViewDelegate,UIColl
         configuration.planeDetection = .horizontal
         sceneView.session.run(configuration)
         
-        setupFocusSquare()
+        
+        // Show statistics such as fps and timing information
+        sceneView.showsStatistics = false
+        
+        // debug scene to see feature points and world's origin
+        //self.sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,78 +49,35 @@ class VocabularyViewController: UIViewController,UICollectionViewDelegate,UIColl
         sceneView.session.pause()
     }
     
-    func randomFloat(min: Float, max: Float) -> Float {
-        return (Float(arc4random()) / 0xFFFFFFFF) * (max - min) + min
-    }
-    
-    struct myCameraCoordinates {
-        var x = Float()
-        var y = Float()
-        var z = Float()
-    }
-    
-    func getCameraCoordinates(sceneView: ARSCNView) -> myCameraCoordinates {
-        let cameraTransform = sceneView.session.currentFrame?.camera.transform
-        let cameraCoordinates = MDLTransform(matrix: cameraTransform!)
-        
-        var cc = myCameraCoordinates()
-        cc.x = cameraCoordinates.translation.x
-        cc.y = cameraCoordinates.translation.y
-        cc.z = cameraCoordinates.translation.z
-        
-        return cc
-    }
     //get position
     
-    @IBAction func itemARButton(_ sender: Any) {
-        let cupNode = SCNNode()
-        
-        let cc = getCameraCoordinates(sceneView: sceneView)
-        cupNode.position = SCNVector3(cc.x, cc.y, cc.z)
-        guard let virtualObjectScene = SCNScene(named: "RockPigeon.scn", inDirectory: "Models.scnassets/RockPigeon") else {
-            return
-        }
+    
+    //TEST DETECT PLAN
+    func loadModel(hitPosition : SCNVector3) {
+        guard let virtualObjectScene = SCNScene(named: "RockPigeon.scn", inDirectory: "Models.scnassets/RockPigeon") else {return }
         
         let wrapperNode = SCNNode()
+        
         for child in virtualObjectScene.rootNode.childNodes {
             child.geometry?.firstMaterial?.lightingModel = .physicallyBased
+            child.movabilityHint = .movable
+            wrapperNode.position = hitPosition
             wrapperNode.addChildNode(child)
         }
-        cupNode.addChildNode(wrapperNode)
-        sceneView.scene.rootNode.addChildNode(cupNode)
+        sceneView.scene.rootNode.addChildNode(wrapperNode)
     }
-    //TEST DETECT PLAN
-    var planes = [ARPlaneAnchor: DetectPlane]()
     
-    func addPlane(node: SCNNode, anchor: ARPlaneAnchor) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else { return }
+        let results = sceneView.hitTest(touch.location(in: sceneView), types: [ARHitTestResult.ResultType.featurePoint])
+        guard let hitFeature = results.last else { return }
+        let hitTransform = SCNMatrix4(hitFeature.worldTransform)
+        // <- if higher than beta 1, use just this -> hitFeature.worldTransform
+        let hitPosition = SCNVector3Make(hitTransform.m41,
+                                         hitTransform.m42,
+                                         hitTransform.m43)
         
-        let plane = DetectPlane(anchor)
-        planes[anchor] = plane
-        node.addChildNode(plane)
-    
-    }
-    
-    func updatePlane(anchor: ARPlaneAnchor) {
-        if let plane = planes[anchor] {
-            plane.update(anchor)
-        }
-    }
-    
-    func removePlane(anchor: ARPlaneAnchor) {
-        if let plane = planes.removeValue(forKey: anchor) {
-            plane.removeFromParentNode()
-        }
-    }
-    
-    // MARK: - Focus Square
-    
-    var focusSquare: FocusSquare?
-    
-    func setupFocusSquare() {
-                    self.focusSquare?.isHidden = true
-            self.focusSquare?.removeFromParentNode()
-            self.focusSquare = FocusSquare()
-            self.sceneView.scene.rootNode.addChildNode(self.focusSquare!)
+        loadModel(hitPosition: hitPosition)
     }
     
 }
