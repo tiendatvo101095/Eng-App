@@ -17,6 +17,7 @@
 		637574F01FB2F75B0095C8F9 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637574EF1FB2F75B0095C8F9 /* WelcomeViewController.swift */; };
 		637574F21FB307460095C8F9 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637574F11FB307460095C8F9 /* UsersViewController.swift */; };
 		637574F41FB3080A0095C8F9 /* UsersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637574F31FB3080A0095C8F9 /* UsersCollectionViewCell.swift */; };
+		638F2F4B1FC2D372004E343F /* Animals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F2F4A1FC2D372004E343F /* Animals.swift */; };
 		63913CD81FBD8900003BD225 /* VRObjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63913CD71FBD8900003BD225 /* VRObjectCollectionViewCell.swift */; };
 		63913CDA1FBD89C4003BD225 /* VirtualObjects.json in Resources */ = {isa = PBXBuildFile; fileRef = 63913CD91FBD89C4003BD225 /* VirtualObjects.json */; };
 		63913CE31FBE8FBD003BD225 /* DetectPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63913CE21FBE8FBD003BD225 /* DetectPlane.swift */; };
@@ -38,6 +39,7 @@
 		637574EF1FB2F75B0095C8F9 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		637574F11FB307460095C8F9 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		637574F31FB3080A0095C8F9 /* UsersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCollectionViewCell.swift; sourceTree = "<group>"; };
+		638F2F4A1FC2D372004E343F /* Animals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animals.swift; sourceTree = "<group>"; };
 		63913CD71FBD8900003BD225 /* VRObjectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRObjectCollectionViewCell.swift; sourceTree = "<group>"; };
 		63913CD91FBD89C4003BD225 /* VirtualObjects.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = VirtualObjects.json; sourceTree = "<group>"; };
 		63913CE21FBE8FBD003BD225 /* DetectPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectPlane.swift; sourceTree = "<group>"; };
@@ -83,9 +85,7 @@
 			children = (
 				631214B91FB2EFC200EE9BF1 /* AppDelegate.swift */,
 				63913CE11FBD9B69003BD225 /* Users */,
-				63B44E831FBBF87C00D282C7 /* VocabularyViewController.swift */,
-				63913CE21FBE8FBD003BD225 /* DetectPlane.swift */,
-				63913CD71FBD8900003BD225 /* VRObjectCollectionViewCell.swift */,
+				638F2F491FC2D338004E343F /* Object */,
 				631214BD1FB2EFC300EE9BF1 /* Main.storyboard */,
 				63913CD91FBD89C4003BD225 /* VirtualObjects.json */,
 				631214C01FB2EFC400EE9BF1 /* Assets.xcassets */,
@@ -95,6 +95,17 @@
 				631214C51FB2EFC500EE9BF1 /* Info.plist */,
 			);
 			path = "Eng-App";
+			sourceTree = "<group>";
+		};
+		638F2F491FC2D338004E343F /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				63B44E831FBBF87C00D282C7 /* VocabularyViewController.swift */,
+				63913CE21FBE8FBD003BD225 /* DetectPlane.swift */,
+				63913CD71FBD8900003BD225 /* VRObjectCollectionViewCell.swift */,
+				638F2F4A1FC2D372004E343F /* Animals.swift */,
+			);
+			path = Object;
 			sourceTree = "<group>";
 		};
 		63913CE11FBD9B69003BD225 /* Users */ = {
@@ -269,6 +280,7 @@
 				63913CD81FBD8900003BD225 /* VRObjectCollectionViewCell.swift in Sources */,
 				63913CE31FBE8FBD003BD225 /* DetectPlane.swift in Sources */,
 				631214BC1FB2EFC300EE9BF1 /* ViewController.swift in Sources */,
+				638F2F4B1FC2D372004E343F /* Animals.swift in Sources */,
 				63B44E841FBBF87C00D282C7 /* VocabularyViewController.swift in Sources */,
 				637574F41FB3080A0095C8F9 /* UsersCollectionViewCell.swift in Sources */,
 				631214BA1FB2EFC200EE9BF1 /* AppDelegate.swift in Sources */,

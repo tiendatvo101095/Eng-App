@@ -11,7 +11,7 @@ import ARKit
 import SceneKit
 
 class VocabularyViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
-    
+    var animals = [Animals]()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
@@ -20,10 +20,13 @@ class VocabularyViewController: UIViewController,UICollectionViewDelegate,UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! VRObjectCollectionViewCell
+        
+        
         return cell
     }
     
     @IBOutlet var sceneView: ARSCNView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -80,4 +83,18 @@ class VocabularyViewController: UIViewController,UICollectionViewDelegate,UIColl
         loadModel(hitPosition: hitPosition)
     }
     
+    // Get Models from JSON File
+    func getJSONFile(){
+            guard let jsonURL = Bundle.main.url(forResource: "VirtualObjects", withExtension: "json") else {
+                fatalError("Missing 'VirtualObjects.json' in bundle.")
+            }
+            
+            do {
+               try let jsonData = try Data(contentsOf: jsonURL)
+                return try JSONDecoder().decode([Animals].self, from: jsonData)
+            } catch {
+                fatalError("Unable to decode VirtualObjects JSON: \(error)")
+            }
+       
+    }
 }

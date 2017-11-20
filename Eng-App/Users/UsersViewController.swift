@@ -134,7 +134,6 @@ class UsersViewController: UIViewController,UICollectionViewDataSource,UICollect
                   
                 }
             }
-        
     }
     
     

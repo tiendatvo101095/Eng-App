@@ -495,34 +495,56 @@
                                     <outlet property="delegate" destination="RI0-ih-dy5" id="ncp-fa-qcn"/>
                                 </connections>
                             </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7J6-E3-qJ8">
+                                <rect key="frame" x="20" y="20" width="94" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back to home"/>
+                                <connections>
+                                    <segue destination="6CU-uB-mp7" kind="show" id="FKy-eF-gUZ"/>
+                                </connections>
+                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="51i-Yf-gxn">
-                                <rect key="frame" x="0.0" y="491" width="414" height="72"/>
+                                <rect key="frame" x="0.0" y="570" width="414" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DYq-gF-kCw">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="70" height="70"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="N3h-Lx-YcV" customClass="VRObjectCollectionViewCell" customModule="Eng_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eko-E6-6m9">
-                                                    <rect key="frame" x="9" y="19" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user-avatar" translatesAutoresizingMaskIntoConstraints="NO" id="z9B-mB-jwF">
+                                                    <rect key="frame" x="25" y="5" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="IVD-fa-1Du"/>
+                                                        <constraint firstAttribute="height" constant="40" id="emR-eb-RyD"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eko-E6-6m9">
+                                                    <rect key="frame" x="2" y="52.333333333333336" width="86" height="15.666666666666664"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
-                                        <size key="customSize" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstItem="z9B-mB-jwF" firstAttribute="centerX" secondItem="N3h-Lx-YcV" secondAttribute="centerX" id="019-Pf-aEt"/>
+                                            <constraint firstAttribute="bottom" secondItem="eko-E6-6m9" secondAttribute="bottom" constant="2" id="HzR-lO-Ql7"/>
+                                            <constraint firstItem="z9B-mB-jwF" firstAttribute="top" secondItem="N3h-Lx-YcV" secondAttribute="top" constant="5" id="PUP-6Q-PGd"/>
+                                            <constraint firstItem="eko-E6-6m9" firstAttribute="centerX" secondItem="N3h-Lx-YcV" secondAttribute="centerX" id="mYO-Kc-Jg0"/>
+                                            <constraint firstAttribute="trailing" secondItem="eko-E6-6m9" secondAttribute="trailing" constant="2" id="nps-xn-mpN"/>
+                                            <constraint firstItem="eko-E6-6m9" firstAttribute="leading" secondItem="N3h-Lx-YcV" secondAttribute="leading" constant="2" id="yae-1K-g03"/>
+                                        </constraints>
+                                        <size key="customSize" width="90" height="70"/>
                                         <connections>
                                             <outlet property="nameObjLabel" destination="eko-E6-6m9" id="bsu-al-0RY"/>
                                         </connections>
@@ -533,31 +555,8 @@
                                     <outlet property="delegate" destination="RI0-ih-dy5" id="C0b-0J-XWk"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZZ-XE-gwH">
-                                <rect key="frame" x="182" y="681" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="3Ef-eQ-4kC"/>
-                                    <constraint firstAttribute="height" constant="50" id="Sbp-TU-3ZQ"/>
-                                </constraints>
-                                <state key="normal" image="if_check-circle-outline-blank_326565"/>
-                                <connections>
-                                    <action selector="itemARButton:" destination="RI0-ih-dy5" eventType="touchUpInside" id="ZmT-fm-Ikv"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7J6-E3-qJ8">
-                                <rect key="frame" x="20" y="20" width="94" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back to home"/>
-                                <connections>
-                                    <segue destination="6CU-uB-mp7" kind="show" id="FKy-eF-gUZ"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="m9X-Un-wbv" firstAttribute="bottom" secondItem="cZZ-XE-gwH" secondAttribute="bottom" constant="5" id="KvF-pL-HBV"/>
-                            <constraint firstItem="cZZ-XE-gwH" firstAttribute="centerX" secondItem="lY4-5v-dNU" secondAttribute="centerX" id="O2n-Qo-04H"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="m9X-Un-wbv"/>
                     </view>
                     <connections>
@@ -571,7 +570,6 @@
     </scenes>
     <resources>
         <image name="gray-line" width="559" height="1"/>
-        <image name="if_check-circle-outline-blank_326565" width="128" height="128"/>
         <image name="imgpsh_fullsize" width="183" height="181"/>
         <image name="lession-icon" width="140" height="140"/>
         <image name="stars" width="309" height="36"/>
