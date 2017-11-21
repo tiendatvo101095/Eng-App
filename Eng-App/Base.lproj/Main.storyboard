@@ -361,13 +361,16 @@
                                             <constraint firstAttribute="height" constant="50" id="Kf8-Dv-HlD"/>
                                             <constraint firstAttribute="width" constant="300" id="rex-sQ-i2j"/>
                                         </constraints>
-                                        <state key="normal" title="Back"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="Back">
+                                            <color key="titleColor" red="0.97997003793716431" green="0.99226564168930054" blue="0.99217623472213745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <segue destination="6CU-uB-mp7" kind="show" id="bF9-22-XSc"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.73298639160000001" green="0.97680455450000003" blue="0.78850965760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="5xq-Ph-C9g" firstAttribute="centerX" secondItem="IXV-Gy-klc" secondAttribute="centerX" id="L8D-em-VjY"/>
                                     <constraint firstItem="5xq-Ph-C9g" firstAttribute="top" secondItem="dXC-co-tsY" secondAttribute="bottom" constant="30" id="NhY-40-hre"/>
