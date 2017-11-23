@@ -14,27 +14,28 @@ class VocabularyViewController: UIViewController,UICollectionViewDelegate,UIColl
     var animals = [Animals]()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return animals.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! VRObjectCollectionViewCell
-        
-        
+        let item = animals[indexPath.row]
+        cell.imgObject.image = UIImage(named:"\(item.img)")
         return cell
     }
     
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet var sceneView: ARSCNView!
-    
+    var audioPlayer = AVAudioPlayer()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        getJSONFile()
         // Do any additional setup after loading the view.
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
         sceneView.session.run(configuration)
-        
+        collectionView.backgroundColor = UIColor.clear.withAlphaComponent(0)
         
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = false
@@ -57,17 +58,22 @@ class VocabularyViewController: UIViewController,UICollectionViewDelegate,UIColl
     
     //TEST DETECT PLAN
     func loadModel(hitPosition : SCNVector3) {
-        guard let virtualObjectScene = SCNScene(named: "RockPigeon.scn", inDirectory: "Models.scnassets/RockPigeon") else {return }
+        if(objectName == nil){
+            objectName = "Fish"
+        }else{
+            guard let virtualObjectScene = SCNScene(named: objectName+".scn", inDirectory: "Models.scnassets/"+objectName) else {return }
         
-        let wrapperNode = SCNNode()
+            let wrapperNode = SCNNode()
         
-        for child in virtualObjectScene.rootNode.childNodes {
-            child.geometry?.firstMaterial?.lightingModel = .physicallyBased
-            child.movabilityHint = .movable
-            wrapperNode.position = hitPosition
-            wrapperNode.addChildNode(child)
-        }
-        sceneView.scene.rootNode.addChildNode(wrapperNode)
+            for child in virtualObjectScene.rootNode.childNodes {
+                child.geometry?.firstMaterial?.lightingModel = .physicallyBased
+                child.movabilityHint = .movable
+                wrapperNode.position = hitPosition
+                wrapperNode.addChildNode(child)
+            }
+            sceneView.scene.rootNode.addChildNode(wrapperNode)
+            voiceSound()
+            }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -82,19 +88,54 @@ class VocabularyViewController: UIViewController,UICollectionViewDelegate,UIColl
         
         loadModel(hitPosition: hitPosition)
     }
-    
+    var objectName: String!
     // Get Models from JSON File
     func getJSONFile(){
-            guard let jsonURL = Bundle.main.url(forResource: "VirtualObjects", withExtension: "json") else {
-                fatalError("Missing 'VirtualObjects.json' in bundle.")
-            }
-            
-            do {
-              // try let jsonData = try Data(contentsOf: jsonURL)
-//                return try JSONDecoder().decode([Animals].self, from: jsonData)
-            } catch {
-                fatalError("Unable to decode VirtualObjects JSON: \(error)")
-            }
-       
+        guard let jsonURL = Bundle.main.url(forResource: "VirtualObjects", withExtension: "json") else {
+            fatalError("Missing 'VirtualObjects.json' in bundle.")
+        }
+        do {
+             let jsonData = try  Data(contentsOf: jsonURL)
+            animals = try JSONDecoder().decode([Animals].self, from: jsonData)
+            print(animals)
+        } catch {
+            fatalError("Unable to decode VirtualObjects JSON: \(error)")
+        }
+        
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        objectName = animals[indexPath.row].modelName
+        print(objectName.description)
+        removeObject()
+        textSound()
+    }
+    
+    func removeObject(){
+        
+        sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in
+            node.removeFromParentNode()
+        }
+    }
+    
+    //SOUND
+    func textSound(){
+        let url = Bundle.main.url(forResource: objectName+"Text", withExtension: ".mp3")
+        do{
+            audioPlayer = try AVAudioPlayer(contentsOf: url!)
+        }catch{
+            print("TEXT SOUND Error!!!")
+        }
+        audioPlayer.play()
+    }
+    //SOUND
+    func voiceSound(){
+        let url = Bundle.main.url(forResource: objectName, withExtension: ".mp3")
+        do{
+            audioPlayer = try AVAudioPlayer(contentsOf: url!)
+        }catch{
+            print("TEXT SOUND Error!!!")
+        }
+        audioPlayer.play()
     }
 }

@@ -8,7 +8,15 @@
 
 import UIKit
 
-struct Animals {
+struct Animals: Decodable {
     let modelName: String
     let displayName: String
+    let img: String
+    
+    init(modelName: String, displayName: String, img: String) {
+        self.modelName = modelName
+        self.displayName = displayName
+        self.img = img
+    }
 }
+

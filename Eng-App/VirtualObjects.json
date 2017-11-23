@@ -1,33 +1,39 @@
 [
-    {
-        "modelName": "candle",
-        "displayName": "Candle",
-        "particleScaleInfo": {"flame": 0.018 }
-    },
-    {
-        "modelName": "cup",
-        "displayName": "Cup",
-        "particleScaleInfo": { }
-    },
-    {
-        "modelName": "vase",
-        "displayName": "Vase",
-        "particleScaleInfo": { }
-    },
-    {
-        "modelName": "lamp",
-        "displayName": "Lamp",
-        "particleScaleInfo": { }
-    },
-    {
-        "modelName": "chair",
-        "displayName": "Chair",
-        "particleScaleInfo": { }
-    },
-     {
-     "modelName": "Bugatti",
-     "displayName": "Bugatti",
-     "particleScaleInfo": { }
-     },
+  {
+  "modelName": "Eagle",
+  "displayName": "Eagle",
+  "img":"icon-Eagle.png"
+  },
+  {
+  "modelName": "RockPigeon",
+  "displayName": "RockPigeon",
+  "img":"icon-RockPigeon.png"
+  },
+ {
+ "modelName": "Zebra",
+ "displayName": "Zebra",
+ "img":"icon-Zebra.png"
+ },
+ {
+ "modelName": "Tiger",
+ "displayName": "Tiger",
+ "img":"icon-Tiger.png"
+ },
+ {
+ "modelName": "Cat",
+ "displayName": "Cat",
+ "img":"icon-Cat.png"
+ },
+ {
+ "modelName": "Elephant",
+ "displayName": "Elephant",
+ "img":"icon-Elephant.png"
+ },
+ {
+ "modelName": "Fish",
+ "displayName": "Fish",
+ "img":"icon-Fish.png"
+ },
 ]
- 
+
+

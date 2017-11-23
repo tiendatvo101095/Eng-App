@@ -10,6 +10,6 @@ import UIKit
 
 class VRObjectCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var nameObjLabel: UILabel!
     
+    @IBOutlet weak var imgObject: UIImageView!
 }
