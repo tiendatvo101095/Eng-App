@@ -67,6 +67,7 @@ class LessonViewController: UIViewController {
     @IBAction func correctButton(_ sender: Any) {
         let playerValue = true
         compareAnswer(correctValue: checkAnswer, playerValue: playerValue)
+        //demo
     }
     
     @IBAction func inCorrectButton(_ sender: Any) {
