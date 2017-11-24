@@ -7,22 +7,31 @@
 //
 
 import UIKit
+import ARKit
+import SceneKit
 
-class LessonViewController: UIViewController {
-    @IBOutlet weak var imgPicture: UIImageView!
+class LessonViewController: UIViewController{
     @IBOutlet weak var answer: UILabel!
-    
-    var imageArray = ["question-lion.jpg", "question-tiger.jpg", "question-snake.jpg", "question-dog.jpg", "question-cat.jpg", "question-elephant.jpg", "question-camel.jpg"]
-    
-    let vocabulary = ["lion", "tiger", "snake", "dog", "cat", "elephant", "camel"]
+    @IBOutlet var sceneView: ARSCNView!
+    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var correctButton: UIButton!
+    @IBOutlet weak var incorrectButton: UIButton!
     
     var checkAnswer:Bool!
     var playerPoint:Int = 0
-
+    var animals = [Animals]()
+    var animalNames = [Animals]()
+    var audioPlayer = AVAudioPlayer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        createImage()
+        getJSONFile()
+        let configuration = ARWorldTrackingConfiguration()
+        configuration.planeDetection = .horizontal
+        sceneView.session.run(configuration)
+        incorrectButton.isHidden = true
+        correctButton.isHidden = true
+        answer.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,18 +39,31 @@ class LessonViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func createImage() {
-        if (imageArray.count > 0) {
-            let randomImage = Int(arc4random_uniform(UInt32(imageArray.count)))
-            let myImage = imageArray[randomImage]
-            imgPicture.image = UIImage(named: myImage)
-            imageArray.remove(at: randomImage)
+    func compareAnswer(correctValue:Bool, playerValue:Bool) {
+        if (correctValue == playerValue) {
+            playerPoint = playerPoint + 1
+            correctSound()
+        } else {
+            incorrectSound()
+        }
+        createObject()
+    }
+    
+    func createObject() {
+        removeObject()
+        if (animals.count > 0) {
+            let randomImage = Int(arc4random_uniform(UInt32(animals.count)))
+            let myData = animals[randomImage].displayName
+            CreateObject(name: myData)
+//            animalVoice(name: myData)
+            animals.remove(at: randomImage)
             
-            let randomAnswer = Int(arc4random_uniform(UInt32(vocabulary.count)))
-            let myAnswer = vocabulary[randomAnswer]
+            let randomAnswer = Int(arc4random_uniform(UInt32(animalNames.count)))
+            let myAnswer = animalNames[randomAnswer].displayName
+            
             answer.text = myAnswer
             
-            if (myImage == "question-" + myAnswer + ".jpg") {
+            if (myData == myAnswer) {
                 checkAnswer = true
             } else {
                 checkAnswer = false
@@ -54,14 +76,14 @@ class LessonViewController: UIViewController {
             secondViewController.result = "You got: " + String(playerPoint) + " point"
             self.present(secondViewController, animated:true, completion:nil)
         }
-        
     }
     
-    func compareAnswer(correctValue:Bool, playerValue:Bool) {
-        if (correctValue == playerValue) {
-            playerPoint = playerPoint + 1
-        }
-        createImage()
+    @IBAction func startButton(_ sender: Any) {
+        createObject()
+        incorrectButton.isHidden = false
+        correctButton.isHidden = false
+        startButton.isHidden = true
+        answer.isHidden = false
     }
     
     @IBAction func correctButton(_ sender: Any) {
@@ -73,5 +95,97 @@ class LessonViewController: UIViewController {
     @IBAction func inCorrectButton(_ sender: Any) {
         let playerValue = false
         compareAnswer(correctValue: checkAnswer, playerValue: playerValue)
+    }
+    
+    // Get Models from JSON File
+    func getJSONFile(){
+        guard let jsonURL = Bundle.main.url(forResource: "VirtualObjects", withExtension: "json") else {
+            fatalError("Missing 'VirtualObjects.json' in bundle.")
+        }
+        do {
+            let jsonData = try  Data(contentsOf: jsonURL)
+            animals = try JSONDecoder().decode([Animals].self, from: jsonData)
+            animalNames = try JSONDecoder().decode([Animals].self, from: jsonData)
+            
+        } catch {
+            fatalError("Unable to decode VirtualObjects JSON: \(error)")
+        }
+    }
+    
+    struct myCameraCoordinates {
+        var x = Float()
+        var y = Float()
+        var z = Float()
+    }
+    
+    func getCameraCoordinates(sceneView: ARSCNView) -> myCameraCoordinates {
+        let cameraTransform = sceneView.session.currentFrame?.camera.transform
+        let cameraCoordinates = MDLTransform(matrix: cameraTransform!)
+        
+        var cc = myCameraCoordinates()
+        cc.x = cameraCoordinates.translation.x
+        cc.y = cameraCoordinates.translation.y
+        cc.z = cameraCoordinates.translation.z
+        
+        return cc
+    }
+    
+    func CreateObject(name:String){
+        let objNode = SCNNode()
+        
+        let cc = getCameraCoordinates(sceneView: sceneView)
+        objNode.position = SCNVector3(cc.x, cc.y-0.1, cc.z-0.5)
+        
+        guard let virtualObjectScene = SCNScene(named: name + ".scn", inDirectory: "Models.scnassets/" + name) else {
+            return
+        }
+        
+        let wrapperNode = SCNNode()
+        for child in virtualObjectScene.rootNode.childNodes {
+            child.geometry?.firstMaterial?.lightingModel = .physicallyBased
+            wrapperNode.addChildNode(child)
+        }
+        objNode.addChildNode(wrapperNode)
+        
+        sceneView.scene.rootNode.addChildNode(objNode)
+    }
+    
+    func removeObject(){
+        sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in
+            node.removeFromParentNode()
+        }
+    }
+    
+    //SOUND
+    func correctSound(){
+        let url = Bundle.main.url(forResource: "correct", withExtension: ".mp3")
+        do{
+            audioPlayer = try AVAudioPlayer(contentsOf: url!)
+        }catch{
+            print("TEXT SOUND Error!!!")
+        }
+        audioPlayer.play()
+    }
+    //SOUND
+    func incorrectSound(){
+        
+        let url = Bundle.main.url(forResource: "inCorrect", withExtension: ".wav")
+        do{
+            audioPlayer = try AVAudioPlayer(contentsOf: url!)
+        }catch{
+            print("TEXT SOUND Error!!!")
+        }
+        audioPlayer.play()
+    }
+    
+    func animalVoice(name:String) {
+        let url = Bundle.main.url(forResource: name, withExtension: ".mp3")
+        do{
+            audioPlayer = try AVAudioPlayer(contentsOf: url!)
+        }catch{
+            print("TEXT SOUND Error!!!")
+        }
+        
+        audioPlayer.play()
     }
 }

@@ -23,6 +23,7 @@ class VocabularyViewController: UIViewController,UICollectionViewDelegate,UIColl
         let item = animals[indexPath.row]
         cell.imgObject.image = UIImage(named:"\(item.img)")
         return cell
+        
     }
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -55,6 +56,8 @@ class VocabularyViewController: UIViewController,UICollectionViewDelegate,UIColl
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         sceneView.session.pause()
+        removeObject()
+        objectName = ""
     }
     
     //get position
@@ -142,5 +145,8 @@ class VocabularyViewController: UIViewController,UICollectionViewDelegate,UIColl
             print("TEXT SOUND Error!!!")
         }
         audioPlayer.play()
+    }
+    @IBAction func backButton(_ sender: Any) {
+
     }
 }
