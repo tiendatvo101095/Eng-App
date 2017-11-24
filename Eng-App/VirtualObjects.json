@@ -15,24 +15,29 @@
  "img":"icon-Zebra.png"
  },
  {
- "modelName": "Tiger",
- "displayName": "Tiger",
- "img":"icon-Tiger.png"
- },
- {
- "modelName": "Cat",
- "displayName": "Cat",
- "img":"icon-Cat.png"
- },
- {
- "modelName": "Elephant",
- "displayName": "Elephant",
- "img":"icon-Elephant.png"
- },
- {
  "modelName": "Fish",
  "displayName": "Fish",
  "img":"icon-Fish.png"
+ },
+ {
+ "modelName": "Shrimp",
+ "displayName": "Shrimp",
+ "img":"icon-Shrimp.png"
+ },
+ {
+ "modelName": "Lobster",
+ "displayName": "Lobster",
+ "img":"icon-Lobster.png"
+ },
+ {
+ "modelName": "Giraffe",
+ "displayName": "Giraffe",
+ "img":"icon-Giraffe.png"
+ },
+ {
+ "modelName": "Dinosaur",
+ "displayName": "Dinosaur",
+ "img":"icon-Dinosaur.png"
  },
 ]
 

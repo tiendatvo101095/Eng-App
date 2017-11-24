@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ftg-FO-zON">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RI0-ih-dy5">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Angella_demo.otf">
+            <string>Angella</string>
+        </array>
         <array key="GillSans.ttc">
             <string>GillSans-Bold</string>
             <string>GillSans-Light</string>
@@ -738,7 +741,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="sL0-Xj-uYa"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DYq-gF-kCw">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DYq-gF-kCw">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -746,18 +749,25 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="N3h-Lx-YcV" customClass="VRObjectCollectionViewCell" customModule="Eng_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                        <rect key="frame" x="0.0" y="10" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-Fish" translatesAutoresizingMaskIntoConstraints="NO" id="A9e-GN-Bab">
-                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-Fish" translatesAutoresizingMaskIntoConstraints="NO" id="A9e-GN-Bab">
+                                                    <rect key="frame" x="5" y="5" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="iv7-Fg-aar"/>
+                                                        <constraint firstAttribute="height" constant="50" id="pqM-oP-zFd"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="A9e-GN-Bab" firstAttribute="centerY" secondItem="N3h-Lx-YcV" secondAttribute="centerY" id="M03-2B-7Rf"/>
+                                            <constraint firstItem="A9e-GN-Bab" firstAttribute="centerX" secondItem="N3h-Lx-YcV" secondAttribute="centerX" id="dla-h4-cM5"/>
+                                        </constraints>
                                         <size key="customSize" width="60" height="60"/>
                                         <connections>
                                             <outlet property="imgObject" destination="A9e-GN-Bab" id="0Rx-fD-EOa"/>
@@ -769,54 +779,42 @@
                                     <outlet property="delegate" destination="RI0-ih-dy5" id="C0b-0J-XWk"/>
                                 </connections>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X9I-Sv-sfj">
-                                <rect key="frame" x="0.0" y="20" width="414" height="60"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7J6-E3-qJ8">
-                                        <rect key="frame" x="10" y="20" width="35" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="lGb-rj-jN6"/>
-                                            <constraint firstAttribute="width" constant="35" id="t9G-ts-gEo"/>
-                                        </constraints>
-                                        <state key="normal" image="backToHome"/>
-                                        <connections>
-                                            <segue destination="6CU-uB-mp7" kind="show" id="FKy-eF-gUZ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="boh-jA-c1N">
-                                        <rect key="frame" x="364" y="10.333333333333332" width="40" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="HmM-Ls-Wy5"/>
-                                            <constraint firstAttribute="width" constant="40" id="YgG-0x-S4O"/>
-                                        </constraints>
-                                        <state key="normal" image="sound-icon"/>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.4484599232673645" green="0.91118866205215454" blue="0.63071024417877197" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7J6-E3-qJ8">
+                                <rect key="frame" x="25" y="45" width="35" height="35"/>
                                 <constraints>
-                                    <constraint firstItem="7J6-E3-qJ8" firstAttribute="centerY" secondItem="X9I-Sv-sfj" secondAttribute="centerY" id="74I-Fn-KY2"/>
-                                    <constraint firstAttribute="height" constant="60" id="8mr-TR-4pr"/>
-                                    <constraint firstItem="7J6-E3-qJ8" firstAttribute="leading" secondItem="X9I-Sv-sfj" secondAttribute="leading" constant="10" id="AWB-LZ-sUJ"/>
-                                    <constraint firstItem="boh-jA-c1N" firstAttribute="centerY" secondItem="X9I-Sv-sfj" secondAttribute="centerY" id="QSS-Y0-E4Q"/>
-                                    <constraint firstAttribute="trailing" secondItem="boh-jA-c1N" secondAttribute="trailing" constant="10" id="V6r-MA-r2a"/>
+                                    <constraint firstAttribute="width" constant="35" id="gnK-gj-n3M"/>
+                                    <constraint firstAttribute="height" constant="35" id="xf9-Ik-j37"/>
                                 </constraints>
-                            </view>
+                                <state key="normal" image="previous (1)"/>
+                                <connections>
+                                    <segue destination="6CU-uB-mp7" kind="show" id="FKy-eF-gUZ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rO-Er-Vna">
+                                <rect key="frame" x="20" y="588" width="374" height="41"/>
+                                <fontDescription key="fontDescription" name="Angella" family="Angella" pointSize="35"/>
+                                <color key="textColor" red="1" green="0.41598360221053754" blue="0.084252270804599738" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="m9X-Un-wbv" firstAttribute="trailing" secondItem="1rO-Er-Vna" secondAttribute="trailing" constant="20" id="0YD-4O-Zxv"/>
+                            <constraint firstItem="51i-Yf-gxn" firstAttribute="top" secondItem="1rO-Er-Vna" secondAttribute="bottom" constant="27" id="39E-5f-OTU"/>
                             <constraint firstItem="m9X-Un-wbv" firstAttribute="bottom" secondItem="51i-Yf-gxn" secondAttribute="bottom" id="BJi-MM-Fch"/>
                             <constraint firstItem="51i-Yf-gxn" firstAttribute="trailing" secondItem="m9X-Un-wbv" secondAttribute="trailing" id="U5Q-5n-WD7"/>
-                            <constraint firstItem="m9X-Un-wbv" firstAttribute="trailing" secondItem="X9I-Sv-sfj" secondAttribute="trailing" id="f7g-DD-GjA"/>
-                            <constraint firstItem="X9I-Sv-sfj" firstAttribute="leading" secondItem="m9X-Un-wbv" secondAttribute="leading" id="hCa-mW-5d5"/>
+                            <constraint firstItem="1rO-Er-Vna" firstAttribute="centerX" secondItem="lY4-5v-dNU" secondAttribute="centerX" id="WsH-Zo-xvE"/>
+                            <constraint firstItem="1rO-Er-Vna" firstAttribute="leading" secondItem="m9X-Un-wbv" secondAttribute="leading" constant="20" id="al9-f2-lJW"/>
+                            <constraint firstItem="7J6-E3-qJ8" firstAttribute="leading" secondItem="m9X-Un-wbv" secondAttribute="leading" constant="25" id="jXy-zf-R16"/>
+                            <constraint firstItem="7J6-E3-qJ8" firstAttribute="top" secondItem="m9X-Un-wbv" secondAttribute="top" constant="25" id="vqN-a9-0QE"/>
                             <constraint firstItem="51i-Yf-gxn" firstAttribute="leading" secondItem="m9X-Un-wbv" secondAttribute="leading" id="wW3-2F-zky"/>
-                            <constraint firstItem="X9I-Sv-sfj" firstAttribute="top" secondItem="m9X-Un-wbv" secondAttribute="top" id="zW9-JJ-730"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="m9X-Un-wbv"/>
                     </view>
                     <connections>
+                        <outlet property="animalsName" destination="1rO-Er-Vna" id="KTa-sN-jVR"/>
                         <outlet property="collectionView" destination="51i-Yf-gxn" id="bBp-uP-bJb"/>
                         <outlet property="sceneView" destination="SrY-dk-3WU" id="S5B-MO-064"/>
-                        <outlet property="topBg" destination="X9I-Sv-sfj" id="uDe-en-ffe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vsr-rn-KST" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -826,14 +824,13 @@
     </scenes>
     <resources>
         <image name="archiment-img" width="196" height="175"/>
-        <image name="backToHome" width="39" height="28"/>
         <image name="gray-line" width="559" height="1"/>
         <image name="icon-Fish" width="256" height="256"/>
         <image name="imgpsh_fullsize" width="183" height="181"/>
         <image name="lession-icon" width="140" height="140"/>
         <image name="level-bg" width="208" height="103"/>
+        <image name="previous (1)" width="256" height="256"/>
         <image name="process-img" width="562" height="41"/>
-        <image name="sound-icon" width="75" height="75"/>
         <image name="stars" width="309" height="36"/>
         <image name="user-avatar" width="150" height="150"/>
         <image name="vocabulary-icon" width="140" height="140"/>
