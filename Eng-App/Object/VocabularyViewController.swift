@@ -25,17 +25,22 @@ class VocabularyViewController: UIViewController,UICollectionViewDelegate,UIColl
         return cell
     }
     
+    @IBOutlet weak var topBg: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet var sceneView: ARSCNView!
     var audioPlayer = AVAudioPlayer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        topBg.backgroundColor = UIColor(red:0.15, green:0.72, blue:0.00, alpha:1.0)
+        collectionView.backgroundColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:0.7)
+        
         getJSONFile()
         // Do any additional setup after loading the view.
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
         sceneView.session.run(configuration)
-        collectionView.backgroundColor = UIColor.clear.withAlphaComponent(0)
+//        collectionView.backgroundColor = UIColor.clear.withAlphaComponent(0)
         
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = false

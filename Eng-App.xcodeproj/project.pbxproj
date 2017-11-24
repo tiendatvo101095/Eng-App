@@ -25,7 +25,6 @@
 		63913CDA1FBD89C4003BD225 /* VirtualObjects.json in Resources */ = {isa = PBXBuildFile; fileRef = 63913CD91FBD89C4003BD225 /* VirtualObjects.json */; };
 		63B44E861FBD345200D282C7 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B44E851FBD345100D282C7 /* Models.scnassets */; };
 		63CC72221FC2D1CE00BE53F0 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CC72211FC2D1CE00BE53F0 /* ResultViewController.swift */; };
-
 		63E2D3471FC6CED300CA0198 /* Angella_demo.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63E2D33F1FC6CED300CA0198 /* Angella_demo.otf */; };
 		63E2D3481FC6CED300CA0198 /* Angella_Italic_demo.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63E2D3401FC6CED300CA0198 /* Angella_Italic_demo.otf */; };
 		63E2D3491FC6CED300CA0198 /* Angella_Narrow_demo.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63E2D3411FC6CED300CA0198 /* Angella_Narrow_demo.otf */; };
@@ -46,9 +45,7 @@
 		63E2D36C1FC6CFA600CA0198 /* ZebraText.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 63E2D36B1FC6CFA500CA0198 /* ZebraText.mp3 */; };
 		63E2D36E1FC6D10C00CA0198 /* RockPigeon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 63E2D36D1FC6D10C00CA0198 /* RockPigeon.mp3 */; };
 		63E2D3701FC6D15A00CA0198 /* RockPigeonText.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 63E2D36F1FC6D15A00CA0198 /* RockPigeonText.mp3 */; };
-
 		7BDCD7E01FC424D600F48E8C /* ArchimentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDCD7DF1FC424D600F48E8C /* ArchimentViewController.swift */; };
-
 		CCE7AD403B91B4BA801C8E6A /* Pods_Eng_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FCF39037930679EB6C56F7 /* Pods_Eng_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,7 +70,6 @@
 		63913CD91FBD89C4003BD225 /* VirtualObjects.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = VirtualObjects.json; sourceTree = "<group>"; };
 		63B44E851FBD345100D282C7 /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
 		63CC72211FC2D1CE00BE53F0 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
-
 		63E2D33F1FC6CED300CA0198 /* Angella_demo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Angella_demo.otf; sourceTree = "<group>"; };
 		63E2D3401FC6CED300CA0198 /* Angella_Italic_demo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Angella_Italic_demo.otf; sourceTree = "<group>"; };
 		63E2D3411FC6CED300CA0198 /* Angella_Narrow_demo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Angella_Narrow_demo.otf; sourceTree = "<group>"; };
@@ -94,7 +90,6 @@
 		63E2D36B1FC6CFA500CA0198 /* ZebraText.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ZebraText.mp3; sourceTree = "<group>"; };
 		63E2D36D1FC6D10C00CA0198 /* RockPigeon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = RockPigeon.mp3; sourceTree = "<group>"; };
 		63E2D36F1FC6D15A00CA0198 /* RockPigeonText.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = RockPigeonText.mp3; sourceTree = "<group>"; };
-
 		7BDCD7DF1FC424D600F48E8C /* ArchimentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchimentViewController.swift; sourceTree = "<group>"; };
 		AB9E70A6C0A6F62A2500D247 /* Pods-Eng-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eng-App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eng-App/Pods-Eng-App.release.xcconfig"; sourceTree = "<group>"; };
 		D8FCF39037930679EB6C56F7 /* Pods_Eng_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eng_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -560,10 +555,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J2RHQ4D42F;
+				DEVELOPMENT_TEAM = 3B3ENMYZR4;
 				INFOPLIST_FILE = "Eng-App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.datvo12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hoainguyen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -576,10 +571,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J2RHQ4D42F;
+				DEVELOPMENT_TEAM = 3B3ENMYZR4;
 				INFOPLIST_FILE = "Eng-App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.datvo12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hoainguyen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
