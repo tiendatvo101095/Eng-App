@@ -10,10 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-
-
 class UsersViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
-    
     var usersList = [UsersModel]()
     var userRef:DatabaseReference!
     
@@ -52,13 +49,11 @@ class UsersViewController: UIViewController,UICollectionViewDataSource,UICollect
         userRef = Database.database().reference()
         fetchUser()
         signOut()
-         
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-        
     }
     
     func signOut(){
@@ -84,8 +79,8 @@ class UsersViewController: UIViewController,UICollectionViewDataSource,UICollect
                 self.collectionViewUser.reloadData()
             }
         })
-        
     }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
         
@@ -114,12 +109,10 @@ class UsersViewController: UIViewController,UICollectionViewDataSource,UICollect
     @IBAction func signUpButton(_ sender: Any) {
         self.performSegue(withIdentifier: "toSignUp", sender: nil)
     }
-    //....
     
     var usersPathData: UsersModel?
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         usersPathData = usersList[indexPath.row]
             let email = (usersPathData?.name)! + "@gmail.com"
             let key = usersPathData?.name
@@ -127,18 +120,15 @@ class UsersViewController: UIViewController,UICollectionViewDataSource,UICollect
             Auth.auth().signIn(withEmail: email, password: key!) { (user, error) in
                 if (error == nil){
                     print("SUCCESS!!!")
-                    
-                     self.performSegue(withIdentifier: "toLogin", sender: indexPath)
+                    self.performSegue(withIdentifier: "toLogin", sender: indexPath)
                 }else{
                     print("LOGIN FAILS")
-                  
                 }
             }
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
         if (segue.identifier == "toLogin"){
             guard let selectedIndexPath = sender as? NSIndexPath,
                 let detailsVC = segue.destination as? WelcomeViewController else { return }
@@ -148,6 +138,4 @@ class UsersViewController: UIViewController,UICollectionViewDataSource,UICollect
         }
         
     }
-    
-    
 }

@@ -54,7 +54,6 @@ class WelcomeViewController: UIViewController {
     
     //Log out button
     @IBAction func LogoutButton(_ sender: Any) {
-        
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
