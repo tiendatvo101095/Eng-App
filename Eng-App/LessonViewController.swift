@@ -16,7 +16,7 @@ class LessonViewController: UIViewController{
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var correctButton: UIButton!
     @IBOutlet weak var incorrectButton: UIButton!
-    
+    let configuration = ARWorldTrackingConfiguration()
     var checkAnswer:Bool!
     var playerPoint:Int = 0
     var animals = [Animals]()
@@ -26,7 +26,7 @@ class LessonViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         getJSONFile()
-        let configuration = ARWorldTrackingConfiguration()
+        
         configuration.planeDetection = .horizontal
         sceneView.session.run(configuration)
         incorrectButton.isHidden = true
@@ -148,6 +148,7 @@ class LessonViewController: UIViewController{
         objNode.addChildNode(wrapperNode)
         
         sceneView.scene.rootNode.addChildNode(objNode)
+        sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
     }
     
     func removeObject(){
