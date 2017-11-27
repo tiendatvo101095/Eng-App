@@ -24,12 +24,15 @@ class UsersViewController: UIViewController {
 
         viewBg.backgroundColor = UIColor(red:0.15, green:0.72, blue:0.00, alpha:1.0)
         
+        usernameView.backgroundColor = UIColor(white: 1, alpha: 0)
         usernameView.borderStyle = .none
         usernameView.textColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.0)
-//        usernameView.placeholder = "Username"
         usernameView.attributedPlaceholder = NSAttributedString(string: "Username", attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+        
+        passwordView.backgroundColor = UIColor(white: 1, alpha: 0)
         passwordView.borderStyle = .none
         passwordView.textColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.0)
+        passwordView.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         
         loginButton.backgroundColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.0)
         loginButton.setTitleColor(UIColor(red:0.15, green:0.72, blue:0.00, alpha:1.0), for: .normal)
@@ -39,6 +42,18 @@ class UsersViewController: UIViewController {
             UIColor(red:0.99, green:0.76, blue:0.00, alpha:1.0), for: .normal)
     }
 
+    @IBAction func loginButtonTap(_ sender: Any) {
+        let email = usernameView.text
+        let password = passwordView.text
+        Auth.auth().signIn(withEmail: email!, password: password!) { (user, error) in
+            if (error == nil) {
+                print("dang nhap thanh cong")
+            } else {
+                print("dang nhap that bai")
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
