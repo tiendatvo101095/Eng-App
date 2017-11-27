@@ -17,9 +17,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var usernameView: UITextField!
     @IBOutlet weak var passwordView: UITextField!
     @IBOutlet weak var confirmPasswordView: UITextField!
+    @IBOutlet weak var errorTextView: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        errorTextView.isHidden = true
         
         viewBg.backgroundColor = UIColor(red:0.15, green:0.72, blue:0.00, alpha:1.0)
         
@@ -45,9 +47,56 @@ class ViewController: UIViewController {
         loginButton.setTitleColor(
             UIColor(red:0.99, green:0.76, blue:0.00, alpha:1.0), for: .normal)
     }
+    
+    func signup() {
+        let email = usernameView.text! + "@gmail.com"
+        let password = passwordView.text
+        let confirmPass = confirmPasswordView.text
+        if (email == "" || password == "") {
+            errorTextView.text = "Please fill full information"
+            errorTextView.isHidden = false
+            return
+        }
+        if (password != confirmPass) {
+            errorTextView.text = "Cofirm password is not correct"
+            errorTextView.isHidden = false
+            return
+        }
+        Auth.auth().createUser(withEmail: email, password: password!) { (user, error) in
+            if (error == nil) {
+                Auth.auth().signIn(withEmail: email, password: password!) { (user, error) in
+                    if (error == nil) {
+                        print("dang nhap thanh cong")
+                        self.errorTextView.isHidden = true
+                        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "welcomeViewController") as! WelcomeViewController
+                        self.present(nextViewController, animated:true, completion:nil)
+                    } else {
+                        print("dang nhap that bai")
+                        self.errorTextView.text = "Please chose another username"
+                        self.errorTextView.isHidden = false
+                    }
+                }
+            } else {
+                
+            }
+        }
+    }
 
+    @IBAction func signupButtonTap(_ sender: Any) {
+        signup()
+    }
+    
+    @IBAction func enterTap(_ sender: Any) {
+        signup()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }
 
