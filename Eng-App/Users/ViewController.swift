@@ -49,7 +49,8 @@ class ViewController: UIViewController {
     }
     
     func signup() {
-        let email = usernameView.text! + "@gmail.com"
+        let userName = usernameView.text!
+        let email = userName + "@gmail.com"
         let password = passwordView.text
         let confirmPass = confirmPasswordView.text
         if (email == "" || password == "") {
@@ -71,6 +72,21 @@ class ViewController: UIViewController {
                         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "welcomeViewController") as! WelcomeViewController
                         self.present(nextViewController, animated:true, completion:nil)
+                        //.. Add data to Firebase Datanbase
+                        var ref: DatabaseReference!
+                        ref = Database.database().reference(fromURL: "https://fir-43245.firebaseio.com/")
+                        guard let uid = user?.uid else{return}
+                        
+                        let userRef = ref.child("users").child(uid)
+                        let value = ["name": userName, "score": ""]
+                        userRef.updateChildValues(value, withCompletionBlock: { (err, ref) in
+                            
+                            if let err = err {
+                                print(err)
+                                return
+                            }
+                            print("Saved user successfully into Firebase db")
+                        })
                     } else {
                         print("dang nhap that bai")
                         self.errorTextView.text = "Please chose another username"

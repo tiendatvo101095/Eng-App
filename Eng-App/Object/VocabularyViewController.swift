@@ -48,7 +48,7 @@ class VocabularyViewController: UIViewController,UICollectionViewDelegate,UIColl
         animalsName.text = ""
         animalsName.font = UIFont(name: "angella", size: 35 )
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -82,6 +82,8 @@ class VocabularyViewController: UIViewController,UICollectionViewDelegate,UIColl
             voiceSound()
             }
     }
+    
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }

@@ -9,6 +9,8 @@
 import UIKit
 import ARKit
 import SceneKit
+import Firebase
+import FirebaseAuth
 
 class LessonViewController: UIViewController{
     @IBOutlet weak var answer: UILabel!
@@ -16,6 +18,7 @@ class LessonViewController: UIViewController{
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var correctButton: UIButton!
     @IBOutlet weak var incorrectButton: UIButton!
+    
     let configuration = ARWorldTrackingConfiguration()
     var checkAnswer:Bool!
     var playerPoint:Int = 0
@@ -70,6 +73,7 @@ class LessonViewController: UIViewController{
             }
         } else {
             print("Het hinh")
+            checkUser()
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             let secondViewController = storyBoard.instantiateViewController(withIdentifier: "resultView") as! ResultViewController
             
@@ -134,7 +138,7 @@ class LessonViewController: UIViewController{
         let objNode = SCNNode()
         
         let cc = getCameraCoordinates(sceneView: sceneView)
-        objNode.position = SCNVector3(cc.x, cc.y-0.1, cc.z-0.5)
+        objNode.position = SCNVector3(cc.x, cc.y-0.15, cc.z-0.5)
         
         guard let virtualObjectScene = SCNScene(named: name + ".scn", inDirectory: "Models.scnassets/" + name) else {
             return
@@ -188,5 +192,37 @@ class LessonViewController: UIViewController{
         }
         
         audioPlayer.play()
+    }
+    
+    //-- Update score
+    var curr = Auth.auth().currentUser
+    
+    func checkUser(){
+        if curr == nil {
+            //...Go to login
+//            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "UsersViewController") as! UsersViewController
+//            self.present(nextViewController, animated:true, completion:nil)
+       //     performSegue(withIdentifier: "toLoginView", sender: Any?.self)
+        }else
+        {
+            var ref: DatabaseReference!
+            ref = Database.database().reference(fromURL: "https://fir-43245.firebaseio.com/")
+            guard let uid = curr?.uid else{return}
+            
+            let userRef = ref.child("users").child(uid)
+            let value = ["score": playerPoint]
+            
+            userRef.updateChildValues(value, withCompletionBlock: { (err, ref) in
+                
+                if let err = err {
+                    print(err)
+                    return
+                }
+                
+                print("Saved user successfully into Firebase db")
+                
+            })
+        }
     }
 }
