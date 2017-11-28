@@ -25,6 +25,7 @@ class LessonViewController: UIViewController{
     var animals = [Animals]()
     var animalNames = [Animals]()
     var audioPlayer = AVAudioPlayer()
+    var textAudioPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +64,10 @@ class LessonViewController: UIViewController{
             
             let randomAnswer = Int(arc4random_uniform(UInt32(animalNames.count)))
             let myAnswer = animalNames[randomAnswer].displayName
-            
+            delay(delay: 1){
+                self.animalText(name: myAnswer)
+            }
+            //animalText(name: myAnswer)
             answer.text = myAnswer
             
             if (myData == myAnswer) {
@@ -183,15 +187,22 @@ class LessonViewController: UIViewController{
         audioPlayer.play()
     }
     
-    func animalVoice(name:String) {
-        let url = Bundle.main.url(forResource: name, withExtension: ".mp3")
+    func animalText(name:String) {
+        let url = Bundle.main.url(forResource: name+"Text", withExtension: ".mp3")
+        
         do{
-            audioPlayer = try AVAudioPlayer(contentsOf: url!)
+            textAudioPlayer = try AVAudioPlayer(contentsOf: url!)
         }catch{
             print("TEXT SOUND Error!!!")
         }
+        self.textAudioPlayer.play()
+    }
+    
+    func delay(delay: Double, closure: @escaping () -> ()) {
         
-        audioPlayer.play()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            closure()
+        }
     }
     
     //-- Update score

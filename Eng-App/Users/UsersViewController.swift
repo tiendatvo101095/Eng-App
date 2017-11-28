@@ -45,6 +45,9 @@ class UsersViewController: UIViewController {
         
         signupButton.setTitleColor(
             UIColor(red:0.99, green:0.76, blue:0.00, alpha:1.0), for: .normal)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(UsersViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(UsersViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -77,16 +80,18 @@ class UsersViewController: UIViewController {
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0{
-                self.view.frame.origin.y -= keyboardSize.height
+            if self.viewBg.frame.origin.y == 0{
+                self.viewBg.frame.origin.y -= keyboardSize.height
+                print("show")
             }
         }
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y != 0{
-                self.view.frame.origin.y += keyboardSize.height
+            if self.viewBg.frame.origin.y != 0{
+                self.viewBg.frame.origin.y += keyboardSize.height
+                print("hide")
             }
         }
     }
