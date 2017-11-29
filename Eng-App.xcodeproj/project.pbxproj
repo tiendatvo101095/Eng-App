@@ -37,6 +37,7 @@
 		637574F41FB3080A0095C8F9 /* UsersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637574F31FB3080A0095C8F9 /* UsersCollectionViewCell.swift */; };
 		637643581FC7F8CF000F7FEB /* Giraffe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 637643571FC7F8CF000F7FEB /* Giraffe.mp3 */; };
 		6376435A1FC7F8DE000F7FEB /* GiraffeText.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 637643591FC7F8DD000F7FEB /* GiraffeText.mp3 */; };
+		637643DA1FCE9D9600234AC6 /* ScoreboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637643D91FCE9D9600234AC6 /* ScoreboardViewController.swift */; };
 		638DAC9D1FC28AF200B194DF /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638DAC9C1FC28AF200B194DF /* LessonViewController.swift */; };
 		63913CDA1FBD89C4003BD225 /* VirtualObjects.json in Resources */ = {isa = PBXBuildFile; fileRef = 63913CD91FBD89C4003BD225 /* VirtualObjects.json */; };
 		63B44E861FBD345200D282C7 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B44E851FBD345100D282C7 /* Models.scnassets */; };
@@ -97,6 +98,7 @@
 		637574F31FB3080A0095C8F9 /* UsersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCollectionViewCell.swift; sourceTree = "<group>"; };
 		637643571FC7F8CF000F7FEB /* Giraffe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Giraffe.mp3; sourceTree = "<group>"; };
 		637643591FC7F8DD000F7FEB /* GiraffeText.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GiraffeText.mp3; sourceTree = "<group>"; };
+		637643D91FCE9D9600234AC6 /* ScoreboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardViewController.swift; sourceTree = "<group>"; };
 		638DAC9C1FC28AF200B194DF /* LessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewController.swift; sourceTree = "<group>"; };
 		63913CD91FBD89C4003BD225 /* VirtualObjects.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = VirtualObjects.json; sourceTree = "<group>"; };
 		63B44E851FBD345100D282C7 /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				631214C21FB2EFC400EE9BF1 /* LaunchScreen.storyboard */,
 				637574ED1FB2F3850095C8F9 /* GoogleService-Info.plist */,
 				631214C51FB2EFC500EE9BF1 /* Info.plist */,
+				637643D91FCE9D9600234AC6 /* ScoreboardViewController.swift */,
 			);
 			path = "Eng-App";
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				637643DA1FCE9D9600234AC6 /* ScoreboardViewController.swift in Sources */,
 				638DAC9D1FC28AF200B194DF /* LessonViewController.swift in Sources */,
 				637020B01FC2F08F00F71572 /* Animals.swift in Sources */,
 				637574F01FB2F75B0095C8F9 /* WelcomeViewController.swift in Sources */,

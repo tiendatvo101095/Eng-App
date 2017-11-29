@@ -16,6 +16,7 @@ class ArchimentViewController: UIViewController {
     @IBOutlet weak var contentBg: UIView!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var currentLevel: UILabel!
+    @IBOutlet weak var progressBarView: UIProgressView!
     
     var curr = Auth.auth().currentUser
     var ref: DatabaseReference!
@@ -34,8 +35,12 @@ class ArchimentViewController: UIViewController {
         backButton.backgroundColor = UIColor(red:0.15, green:0.72, blue:0.00, alpha:1.0)
         backButton.setTitleColor(UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.0), for: .normal)
         
-        
-
+//        self.progressBarView.bounds.size.height = 10
+        progressBarView.transform = CGAffineTransform(scaleX: 1, y: 10)
+        progressBarView.clipsToBounds = true
+        progressBarView.layer.cornerRadius = 15
+        progressBarView.trackTintColor = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0)
+        progressBarView.progressTintColor = UIColor(red:0.97, green:0.67, blue:0.13, alpha:1.0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,6 +64,9 @@ class ArchimentViewController: UIViewController {
                 
                 self.currentLevel.text = users.score?.description
                 
+                UIView.animate(withDuration: 2, animations: {() -> Void in
+                    self.progressBarView.setProgress(Float(users.score!) / 8, animated: true)
+                })
             }){ (error) in
                 print("ERROR!!!")
                 print(error.localizedDescription)
