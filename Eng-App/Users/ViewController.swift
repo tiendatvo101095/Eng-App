@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         errorTextView.isHidden = true
         
-        viewBg.backgroundColor = UIColor(red:0.15, green:0.72, blue:0.00, alpha:1.0)
+        viewBg.backgroundColor = UIColor(red:0.11, green:0.53, blue:0.00, alpha:1.0)
         
         usernameView.backgroundColor = UIColor(white: 1, alpha: 0)
         usernameView.borderStyle = .none

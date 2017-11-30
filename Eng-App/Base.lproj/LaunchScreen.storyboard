@@ -20,18 +20,18 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Woh-wt-Tys">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgpsh_fullsize" translatesAutoresizingMaskIntoConstraints="NO" id="Nty-Qy-6GA">
-                                        <rect key="frame" x="137.5" y="273.5" width="100" height="100"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-logo-1" translatesAutoresizingMaskIntoConstraints="NO" id="eJG-pt-CuV">
+                                        <rect key="frame" x="112.5" y="248.5" width="150" height="150"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="Taf-tO-Gvy"/>
-                                            <constraint firstAttribute="width" constant="100" id="V7B-4V-xy0"/>
+                                            <constraint firstAttribute="height" constant="150" id="oLL-76-d7F"/>
+                                            <constraint firstAttribute="width" constant="150" id="qyL-5F-Orl"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.15427824854850769" green="0.71674978733062744" blue="0.0041531063616275787" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.11479005962610245" green="0.53075629472732544" blue="0.00087603984866291285" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="Nty-Qy-6GA" firstAttribute="centerX" secondItem="Woh-wt-Tys" secondAttribute="centerX" id="XaP-Cn-14t"/>
-                                    <constraint firstItem="Nty-Qy-6GA" firstAttribute="centerY" secondItem="Woh-wt-Tys" secondAttribute="centerY" id="iK4-no-DGx"/>
+                                    <constraint firstItem="eJG-pt-CuV" firstAttribute="centerX" secondItem="Woh-wt-Tys" secondAttribute="centerX" id="wTe-C5-WjM"/>
+                                    <constraint firstItem="eJG-pt-CuV" firstAttribute="centerY" secondItem="Woh-wt-Tys" secondAttribute="centerY" id="x8M-Km-hoO"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -51,6 +51,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="imgpsh_fullsize" width="183" height="181"/>
+        <image name="launch-logo-1" width="400" height="400"/>
     </resources>
 </document>
