@@ -40,6 +40,8 @@ class ScoreboardViewController: UIViewController,UITableViewDelegate,UITableView
             let score = value!["score"]
                     
             if(score != nil) {
+                print(score)
+                //score as! Int > 0 &&
                 if(score as! Int > 0) {
                     let users = UsersModel(name: userName as? String, score: score as? Int)
                     self.scoreList.append(users)

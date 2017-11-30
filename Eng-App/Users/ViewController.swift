@@ -90,7 +90,7 @@ class ViewController: UIViewController {
                         guard let uid = user?.uid else{return}
                         
                         let userRef = ref.child("users").child(uid)
-                        let value = ["name": userName, "score": ""]
+                        let value = ["name": userName, "score": 0] as [String : Any]
                         userRef.updateChildValues(value, withCompletionBlock: { (err, ref) in
                             
                             if let err = err {
