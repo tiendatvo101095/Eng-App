@@ -20,9 +20,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var confirmPasswordView: UITextField!
     @IBOutlet weak var errorTextView: UILabel!
     @IBOutlet weak var logoHeight: NSLayoutConstraint!
-    
+    var userRef: DatabaseReference!
+    var userList = [UsersModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        userRef = Database.database().reference(fromURL: "https://fir-43245.firebaseio.com/users")
         errorTextView.isHidden = true
         
         viewBg.backgroundColor = UIColor(red:0.11, green:0.53, blue:0.00, alpha:1.0)
@@ -54,6 +56,7 @@ class ViewController: UIViewController {
     }
     
     func signup() {
+        
         let userName = usernameView.text!
         let email = userName + "@gmail.com"
         let password = passwordView.text
@@ -68,7 +71,9 @@ class ViewController: UIViewController {
             errorTextView.isHidden = false
             return
         }
+        
         loading()
+        print("OK")
         Auth.auth().createUser(withEmail: email, password: password!) { (user, error) in
             if (error == nil) {
                 Auth.auth().signIn(withEmail: email, password: password!) { (user, error) in
@@ -90,21 +95,21 @@ class ViewController: UIViewController {
                             
                             if let err = err {
                                 print(err)
+                                self.stopLoading()
                                 return
                             }
                             print("Saved user successfully into Firebase db")
-                        })
-                    } else {
-                        self.stopLoading()
-                        print("dang nhap that bai")
-                        self.errorTextView.text = "Please chose another username"
-                        self.errorTextView.isHidden = false
-                    }
-                }
-            } else {
-                
-            }
-        }
+                        }) // stop userRef
+                    }//stop check error == nil
+                }// stop Sign in
+            }else{
+                print("Trung")
+                self.stopLoading()
+                self.errorTextView.text = "Username is exist"
+                self.errorTextView.isHidden = false
+            }//stop check error == nil
+        }// stop Create user
+        
     }
 
     @IBAction func signupButtonTap(_ sender: Any) {

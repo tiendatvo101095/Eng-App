@@ -64,9 +64,14 @@ class ArchimentViewController: UIViewController {
                 
                 self.currentLevel.text = users.score?.description
                 
-                UIView.animate(withDuration: 2, animations: {() -> Void in
-                    self.progressBarView.setProgress(Float(users.score!) / 8, animated: true)
-                })
+                if (users.score?.description == nil) {
+                    self.currentLevel.text = "0"
+                } else {
+                    UIView.animate(withDuration: 2, animations: {() -> Void in
+                        self.progressBarView.setProgress(Float(users.score!) / 8, animated: true)
+                    })
+                }
+                
             }){ (error) in
                 print("ERROR!!!")
                 print(error.localizedDescription)
