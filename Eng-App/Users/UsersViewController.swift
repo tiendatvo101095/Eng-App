@@ -11,7 +11,10 @@ import Firebase
 import FirebaseAuth
 
 class UsersViewController: UIViewController {
+    @IBOutlet weak var logoHeighcontraint: NSLayoutConstraint!
     
+    @IBOutlet weak var logoApp: UIImageView!
+    @IBOutlet var viewV: UIView!
     @IBOutlet weak var viewBg: UIView!
     @IBOutlet weak var signupButton: UIButton!
     @IBOutlet weak var usernameView: UITextField!
@@ -46,12 +49,20 @@ class UsersViewController: UIViewController {
         signupButton.setTitleColor(
             UIColor(red:0.99, green:0.76, blue:0.00, alpha:1.0), for: .normal)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(UsersViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(UsersViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(UsersViewController.keyBoardUp(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(UsersViewController.keyBoardDown(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+//        logoHeighcontraint.constant = 100;
+//        UIView.animate(withDuration: 0.5) {
+//            self.viewV.layoutIfNeeded()
+//        }
     }
     
     func login() {
@@ -77,24 +88,30 @@ class UsersViewController: UIViewController {
             }
         }
     }
-    
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.viewBg.frame.origin.y == 0{
-                self.viewBg.frame.origin.y -= keyboardSize.height
-                print("show")
+    // move up view by Dat
+    @objc func keyBoardUp(notification: NSNotification){
+        
+        if ((notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
+            
+            logoHeighcontraint.constant = 0;
+
+            UIView.animate(withDuration: 0.5) {
+                self.viewV.layoutIfNeeded()
             }
+        }
+        
+    }
+    @objc func keyBoardDown(notification: NSNotification){
+        if ((notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil{
+            
+            logoHeighcontraint.constant = 100;
+            UIView.animate(withDuration: 0.5) {
+                self.viewV.layoutIfNeeded()
+            }
+            
         }
     }
     
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.viewBg.frame.origin.y != 0{
-                self.viewBg.frame.origin.y += keyboardSize.height
-                print("hide")
-            }
-        }
-    }
 
     @IBAction func loginButtonTap(_ sender: Any) {
         self.login()

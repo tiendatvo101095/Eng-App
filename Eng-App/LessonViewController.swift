@@ -78,6 +78,7 @@ class LessonViewController: UIViewController{
         } else {
             print("Het hinh")
             checkUser()
+            
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             let secondViewController = storyBoard.instantiateViewController(withIdentifier: "resultView") as! ResultViewController
             
@@ -223,7 +224,6 @@ class LessonViewController: UIViewController{
             
             let userRef = ref.child("users").child(uid)
             let value = ["score": playerPoint]
-            
             userRef.updateChildValues(value, withCompletionBlock: { (err, ref) in
                 
                 if let err = err {
@@ -233,7 +233,7 @@ class LessonViewController: UIViewController{
                 
                 print("Saved user successfully into Firebase db")
                 
-            })
+                 })
         }
     }
 }

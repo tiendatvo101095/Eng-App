@@ -46,6 +46,9 @@ class ViewController: UIViewController {
         
         loginButton.setTitleColor(
             UIColor(red:0.99, green:0.76, blue:0.00, alpha:1.0), for: .normal)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyBoardUp(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyBoardDown(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     func signup() {
@@ -113,6 +116,19 @@ class ViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    // move up view by Dat
+    @objc func keyBoardUp(notification: NSNotification){
+        
+        if((notification.userInfo![UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil{
+            self.viewBg.frame.origin.y = 0
+            self.viewBg.frame.origin.y -= 150
+        }
+    }
+    @objc func keyBoardDown(notification: NSNotification){
+        if((notification.userInfo![UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil{
+            self.viewBg.frame.origin.y = 0
+        }
     }
 }
 
