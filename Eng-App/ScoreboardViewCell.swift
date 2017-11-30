@@ -17,7 +17,8 @@ class ScoreboardViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        orderNumber.textColor = UIColor(red:0.73, green:0.73, blue:0.73, alpha:1.0)
+        score.textColor = UIColor(red:0.15, green:0.72, blue:0.00, alpha:1.0)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

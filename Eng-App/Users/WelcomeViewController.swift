@@ -33,7 +33,7 @@ class WelcomeViewController: UIViewController {
         let truncated = name?.substring(to: endIndex!)
         userNameLabel.text = truncated?.description
         
-        topBg.backgroundColor = UIColor(red:0.11, green:0.53, blue:0.00, alpha:1.0)
+        topBg.backgroundColor = UIColor(red:0.00, green:0.66, blue:0.20, alpha:1.0)
         bottomBg.backgroundColor = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0)
         
         archievementBtn.layer.cornerRadius = 20
