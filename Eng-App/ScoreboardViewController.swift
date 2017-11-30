@@ -67,6 +67,7 @@ class ScoreboardViewController: UIViewController,UITableViewDelegate,UITableView
         let item = scoreList[indexPath.row]
 //        let temp = scoreList.count
 //        cell.orderNumber.text = temp.description
+        cell.orderNumber.text = String(indexPath.row + 1)
         cell.userAvatar.image = UIImage(named: "user-avatar")
         cell.username.text = item.name
         cell.score.text = item.score?.description

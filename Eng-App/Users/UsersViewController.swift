@@ -13,7 +13,7 @@ import FirebaseAuth
 class UsersViewController: UIViewController {
     @IBOutlet weak var logoHeighcontraint: NSLayoutConstraint!
     
-    @IBOutlet weak var logoApp: UIImageView!
+
     @IBOutlet var viewV: UIView!
     @IBOutlet weak var viewBg: UIView!
     @IBOutlet weak var signupButton: UIButton!
@@ -21,6 +21,7 @@ class UsersViewController: UIViewController {
     @IBOutlet weak var passwordView: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var errorText: UILabel!
+    @IBOutlet weak var logoHeight: NSLayoutConstraint!
     
     
     override func viewDidLoad() {
@@ -93,7 +94,7 @@ class UsersViewController: UIViewController {
         
         if ((notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
             
-            logoHeighcontraint.constant = 0;
+            logoHeight.constant = 0;
 
             UIView.animate(withDuration: 0.5) {
                 self.viewV.layoutIfNeeded()
@@ -104,7 +105,7 @@ class UsersViewController: UIViewController {
     @objc func keyBoardDown(notification: NSNotification){
         if ((notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil{
             
-            logoHeighcontraint.constant = 100;
+            logoHeight.constant = 100;
             UIView.animate(withDuration: 0.5) {
                 self.viewV.layoutIfNeeded()
             }
