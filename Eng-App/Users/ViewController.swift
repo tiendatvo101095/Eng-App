@@ -99,7 +99,9 @@ class ViewController: UIViewController {
                     }
                 }
             } else {
-                
+                print("dang nhap that bai")
+                self.errorTextView.text = "Please chose another username"
+                self.errorTextView.isHidden = false
             }
         }
     }
