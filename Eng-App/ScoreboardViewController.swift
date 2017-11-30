@@ -56,7 +56,7 @@ class ScoreboardViewController: UIViewController,UITableViewDelegate,UITableView
         
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100;
+        return 70;
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -72,7 +72,7 @@ class ScoreboardViewController: UIViewController,UITableViewDelegate,UITableView
         cell.orderNumber.text = String(indexPath.row + 1)
         cell.userAvatar.image = UIImage(named: "user-avatar")
         cell.username.text = item.name
-        cell.score.text = item.score?.description
+        cell.score.text = (item.score?.description)! + " points"
         return cell
     }
 
