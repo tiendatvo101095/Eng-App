@@ -16,6 +16,7 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var topBg: UIView!
     @IBOutlet weak var bottomBg: UIView!
     @IBOutlet weak var archievementBtn: UIButton!
+    @IBOutlet weak var viewScoreboard: UIButton!
     
     @IBOutlet weak var Vocabulary: UIButton!
     @IBOutlet weak var youWantToLearTitle: UILabel!
@@ -32,12 +33,16 @@ class WelcomeViewController: UIViewController {
         let truncated = name?.substring(to: endIndex!)
         userNameLabel.text = truncated?.description
         
-        topBg.backgroundColor = UIColor(red:0.15, green:0.72, blue:0.00, alpha:1.0)
+        topBg.backgroundColor = UIColor(red:0.11, green:0.53, blue:0.00, alpha:1.0)
         bottomBg.backgroundColor = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0)
         
         archievementBtn.layer.cornerRadius = 20
         archievementBtn.layer.borderWidth = 1
         archievementBtn.layer.borderColor = UIColor.white.cgColor
+        
+        viewScoreboard.layer.cornerRadius = 20
+        viewScoreboard.layer.borderWidth = 1
+        viewScoreboard.layer.borderColor = UIColor.white.cgColor
         
         youWantToLearTitle.textColor = UIColor(red:0.20, green:0.20, blue:0.20, alpha:1.0)
         

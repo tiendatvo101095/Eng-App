@@ -38,7 +38,7 @@ class ArchimentViewController: UIViewController {
 //        self.progressBarView.bounds.size.height = 10
         progressBarView.transform = CGAffineTransform(scaleX: 1, y: 10)
         progressBarView.clipsToBounds = true
-        progressBarView.layer.cornerRadius = 15
+        progressBarView.layer.cornerRadius = 5
         progressBarView.trackTintColor = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0)
         progressBarView.progressTintColor = UIColor(red:0.97, green:0.67, blue:0.13, alpha:1.0)
     }
