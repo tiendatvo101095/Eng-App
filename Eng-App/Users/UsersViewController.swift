@@ -67,6 +67,7 @@ class UsersViewController: UIViewController {
     }
     
     func login() {
+        
         let username = usernameView.text
         let password = passwordView.text
         if (username == "" || password == "") {
@@ -74,15 +75,18 @@ class UsersViewController: UIViewController {
             self.errorText.isHidden = false
             return
         }
+        loading()
         let email = (username)! + "@gmail.com"
         Auth.auth().signIn(withEmail: email, password: password!) { (user, error) in
             if (error == nil) {
+                self.stopLoading()
                 print("dang nhap thanh cong")
                 self.errorText.isHidden = true
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                 let nextViewController = storyBoard.instantiateViewController(withIdentifier: "welcomeViewController") as! WelcomeViewController
                 self.present(nextViewController, animated:true, completion:nil)
             } else {
+                self.stopLoading()
                 print("dang nhap that bai")
                 self.errorText.text = "Wrong username or password"
                 self.errorText.isHidden = false
@@ -112,7 +116,20 @@ class UsersViewController: UIViewController {
             
         }
     }
-    
+    func loading(){
+        let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+        
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        loadingIndicator.startAnimating();
+
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
+    }
+    func stopLoading(){
+        dismiss(animated: false, completion: nil)
+    }
 
     @IBAction func loginButtonTap(_ sender: Any) {
         self.login()

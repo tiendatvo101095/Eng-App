@@ -68,10 +68,12 @@ class ViewController: UIViewController {
             errorTextView.isHidden = false
             return
         }
+        loading()
         Auth.auth().createUser(withEmail: email, password: password!) { (user, error) in
             if (error == nil) {
                 Auth.auth().signIn(withEmail: email, password: password!) { (user, error) in
                     if (error == nil) {
+                        self.stopLoading()
                         print("dang nhap thanh cong")
                         self.errorTextView.isHidden = true
                         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
@@ -93,6 +95,7 @@ class ViewController: UIViewController {
                             print("Saved user successfully into Firebase db")
                         })
                     } else {
+                        self.stopLoading()
                         print("dang nhap that bai")
                         self.errorTextView.text = "Please chose another username"
                         self.errorTextView.isHidden = false
@@ -136,6 +139,20 @@ class ViewController: UIViewController {
                 self.viewV.layoutIfNeeded()
             }
         }
+    }
+    func loading(){
+        let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+        
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        loadingIndicator.startAnimating();
+        
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
+    }
+    func stopLoading(){
+        dismiss(animated: false, completion: nil)
     }
 }
 
