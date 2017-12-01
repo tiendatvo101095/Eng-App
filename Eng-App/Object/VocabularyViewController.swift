@@ -30,6 +30,7 @@ class VocabularyViewController: UIViewController,UICollectionViewDelegate,UIColl
     @IBOutlet var sceneView: ARSCNView!
     var audioPlayer = AVAudioPlayer()
     
+    @IBOutlet weak var tutorialText: UILabel!
     @IBOutlet weak var animalsName: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +46,7 @@ class VocabularyViewController: UIViewController,UICollectionViewDelegate,UIColl
         
         // debug scene to see feature points and world's origin
         //self.sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
+        tutorialText.text = "Touch screen to place the animal!"
         animalsName.text = ""
         animalsName.font = UIFont(name: "angella", size: 35 )
     }
@@ -86,6 +88,7 @@ class VocabularyViewController: UIViewController,UICollectionViewDelegate,UIColl
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        tutorialText.isHidden = true
         guard let touch = touches.first else { return }
         let results = sceneView.hitTest(touch.location(in: sceneView), types: [ARHitTestResult.ResultType.featurePoint])
         guard let hitFeature = results.last else { return }

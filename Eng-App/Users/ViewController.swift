@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         userRef = Database.database().reference(fromURL: "https://fir-43245.firebaseio.com/users")
         errorTextView.isHidden = true
         
-        viewBg.backgroundColor = UIColor(red:0.11, green:0.53, blue:0.00, alpha:1.0)
+        viewBg.backgroundColor = UIColor(red:0.00, green:0.66, blue:0.20, alpha:1.0)
         
         usernameView.backgroundColor = UIColor(white: 1, alpha: 0)
         usernameView.borderStyle = .none
@@ -61,6 +61,11 @@ class ViewController: UIViewController {
         let email = userName + "@gmail.com"
         let password = passwordView.text
         let confirmPass = confirmPasswordView.text
+        if((password?.count)! < 6){
+            errorTextView.text = "Password must be at least 6 characters"
+            errorTextView.isHidden = false
+            return
+        }
         if (email == "" || password == "") {
             errorTextView.text = "Please fill full information"
             errorTextView.isHidden = false

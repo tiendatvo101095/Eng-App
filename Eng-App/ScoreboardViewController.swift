@@ -23,9 +23,9 @@ class ScoreboardViewController: UIViewController,UITableViewDelegate,UITableView
         fetchData()
         mainBg.backgroundColor = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0)
         
-        backButton.layer.cornerRadius = 25
-        backButton.backgroundColor = UIColor(red:0.15, green:0.72, blue:0.00, alpha:1.0)
-        backButton.setTitleColor(UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.0), for: .normal)
+//        backButton.layer.cornerRadius = 25
+//        backButton.backgroundColor = UIColor(red:0.15, green:0.72, blue:0.00, alpha:1.0)
+//        backButton.setTitleColor(UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.0), for: .normal)
     }
 
     override func didReceiveMemoryWarning() {
