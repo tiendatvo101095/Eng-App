@@ -53,6 +53,7 @@ class ViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyBoardUp(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyBoardDown(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
     }
     
     func signup() {

@@ -68,7 +68,7 @@ class ArchimentViewController: UIViewController {
                     self.currentLevel.text = "0"
                 } else {
                     UIView.animate(withDuration: 2, animations: {() -> Void in
-                        self.progressBarView.setProgress(Float(users.score!) / 8, animated: true)
+                        self.progressBarView.setProgress(Float(users.score!) / 7, animated: true)
                     })
                 }
                 

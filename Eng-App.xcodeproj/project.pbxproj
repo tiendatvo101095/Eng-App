@@ -28,7 +28,6 @@
 		634C99E21FC7D1B2000DF568 /* Lobster.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 634C99E11FC7D1B2000DF568 /* Lobster.mp3 */; };
 		634C99E41FC7D210000DF568 /* Fish.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 634C99E31FC7D20F000DF568 /* Fish.mp3 */; };
 		637020B01FC2F08F00F71572 /* Animals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637020AC1FC2F08F00F71572 /* Animals.swift */; };
-		637020B11FC2F08F00F71572 /* DetectPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637020AD1FC2F08F00F71572 /* DetectPlane.swift */; };
 		637020B21FC2F08F00F71572 /* VocabularyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637020AE1FC2F08F00F71572 /* VocabularyViewController.swift */; };
 		637020B31FC2F08F00F71572 /* VRObjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637020AF1FC2F08F00F71572 /* VRObjectCollectionViewCell.swift */; };
 		637574EE1FB2F3850095C8F9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 637574ED1FB2F3850095C8F9 /* GoogleService-Info.plist */; };
@@ -90,7 +89,6 @@
 		634C99E11FC7D1B2000DF568 /* Lobster.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Lobster.mp3; sourceTree = "<group>"; };
 		634C99E31FC7D20F000DF568 /* Fish.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Fish.mp3; sourceTree = "<group>"; };
 		637020AC1FC2F08F00F71572 /* Animals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animals.swift; sourceTree = "<group>"; };
-		637020AD1FC2F08F00F71572 /* DetectPlane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectPlane.swift; sourceTree = "<group>"; };
 		637020AE1FC2F08F00F71572 /* VocabularyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VocabularyViewController.swift; sourceTree = "<group>"; };
 		637020AF1FC2F08F00F71572 /* VRObjectCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VRObjectCollectionViewCell.swift; sourceTree = "<group>"; };
 		637574ED1FB2F3850095C8F9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -170,7 +168,6 @@
 				63E2D34E1FC6CEE200CA0198 /* Audio */,
 				63E2D33C1FC6CEC600CA0198 /* Font */,
 				637020AB1FC2F08F00F71572 /* Object */,
-				63323A3D1FC8083F00C0B362 /* Lesson */,
 				63913CE11FBD9B69003BD225 /* Users */,
 				631214BD1FB2EFC300EE9BF1 /* Main.storyboard */,
 				63913CD91FBD89C4003BD225 /* VirtualObjects.json */,
@@ -185,18 +182,10 @@
 			path = "Eng-App";
 			sourceTree = "<group>";
 		};
-		63323A3D1FC8083F00C0B362 /* Lesson */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Lesson;
-			sourceTree = "<group>";
-		};
 		637020AB1FC2F08F00F71572 /* Object */ = {
 			isa = PBXGroup;
 			children = (
 				637020AC1FC2F08F00F71572 /* Animals.swift */,
-				637020AD1FC2F08F00F71572 /* DetectPlane.swift */,
 				637020AE1FC2F08F00F71572 /* VocabularyViewController.swift */,
 				637020AF1FC2F08F00F71572 /* VRObjectCollectionViewCell.swift */,
 			);
@@ -487,7 +476,6 @@
 				631214BC1FB2EFC300EE9BF1 /* ViewController.swift in Sources */,
 				7BDCD7E01FC424D600F48E8C /* ArchimentViewController.swift in Sources */,
 				637643DC1FCEC2D600234AC6 /* ScoreboardViewCell.swift in Sources */,
-				637020B11FC2F08F00F71572 /* DetectPlane.swift in Sources */,
 				63CC72221FC2D1CE00BE53F0 /* ResultViewController.swift in Sources */,
 				637574F41FB3080A0095C8F9 /* UsersCollectionViewCell.swift in Sources */,
 				631214BA1FB2EFC200EE9BF1 /* AppDelegate.swift in Sources */,
@@ -631,10 +619,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J2RHQ4D42F;
+				DEVELOPMENT_TEAM = 3B3ENMYZR4;
 				INFOPLIST_FILE = "Eng-App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.datvoabc;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hoainguyen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -647,10 +635,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J2RHQ4D42F;
+				DEVELOPMENT_TEAM = 3B3ENMYZR4;
 				INFOPLIST_FILE = "Eng-App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.datvoabc;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hoainguyen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
